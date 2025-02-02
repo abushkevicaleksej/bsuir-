@@ -8,10 +8,11 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Test123")
-        self.geometry('1024x640')
+        self.geometry('1280x720')
         self.resizable(False, False)
-        center_window(self, 1024,640)
-        self.menu = Menu(self)
-        self.main = Main(self)
+        center_window(self, 1280, 720)
+
+        self.main = Main(self)  # Initialize Main first (creates workspace)
+        self.menu = Menu(self, self.main.workspace, self.main.table)
 
         self.mainloop()

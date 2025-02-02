@@ -4,7 +4,7 @@ from tkinter import ttk
 from view.center_window import center_window
 from model.mode import Mode
 
-class CompileWindow(tk.Toplevel):
+class CompileSegmentWindow(tk.Toplevel):
     def __init__(self, menu):
         super().__init__()
         self.title("Построение отрезка.")
