@@ -12,7 +12,7 @@ class App(tk.Tk):
         self.resizable(False, False)
         center_window(self, 1280, 720)
 
-        self.main = Main(self)  # Initialize Main first (creates workspace)
+        self.main = Main(self)
         self.menu = Menu(self, self.main.workspace, self.main.table)
 
         self.mainloop()

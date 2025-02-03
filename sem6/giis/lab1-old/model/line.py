@@ -35,7 +35,6 @@ class SecondOrderLine:
         self.workspace.draw_points(points)
 
     def _bresenham_circle(self):
-        """Bresenham's algorithm for drawing a circle with radius self.b."""
         r = self.y
         x, y = 0, r
         d = 3 - 2 * r
@@ -53,14 +52,13 @@ class SecondOrderLine:
         return points
 
     def _bresenham_ellipse(self):
-        """Bresenham's algorithm for drawing an ellipse centered at (0,0)."""
         a, b = self.a, self.b
         x, y = 0, b
         d = b ** 2 - a ** 2 * b + (a ** 2) // 4
         points = []
 
         while b ** 2 * x <= a ** 2 * y:
-            points += [(x, y), (-x, y), (x, -y), (-x, -y)]  # Centered at (0,0)
+            points += [(x, y), (-x, y), (x, -y), (-x, -y)]
             if d < 0:
                 d += 2 * b ** 2 * x + 3 * b ** 2
             else:
@@ -70,7 +68,7 @@ class SecondOrderLine:
 
         d = b ** 2 * (x + 0.5) ** 2 + a ** 2 * (y - 1) ** 2 - a ** 2 * b ** 2
         while y >= 0:
-            points += [(x, y), (-x, y), (x, -y), (-x, -y)]  # Centered at (0,0)
+            points += [(x, y), (-x, y), (x, -y), (-x, -y)]
             if d > 0:
                 d += -2 * a ** 2 * y + 3 * a ** 2
             else:
@@ -80,14 +78,13 @@ class SecondOrderLine:
         return points
 
     def _bresenham_hyperbola(self):
-        """Bresenham’s algorithm for drawing a hyperbola centered at (0,0)."""
         a, b = self.a, self.b
         x, y = a, 0
         d = a ** 2 - 2 * a * b ** 2 + b ** 2
         points = []
 
         while x * b ** 2 >= y * a ** 2:
-            points += [(x, y), (-x, y), (x, -y), (-x, -y)]  # Centered at (0,0)
+            points += [(x, y), (-x, y), (x, -y), (-x, -y)]
             if d < 0:
                 d += 2 * a ** 2 * y + 3 * a ** 2
             else:
@@ -97,7 +94,6 @@ class SecondOrderLine:
         return points
 
     def _bresenham_parabola(self):
-        """Bresenham’s algorithm for drawing a parabola (y^2 = 4ax), centered at (0,0)."""
         x, y = 0, 0
         d = 1 - self.a
         points = []

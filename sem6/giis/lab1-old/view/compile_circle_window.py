@@ -40,7 +40,6 @@ class CompileCircleWindow(tk.Toplevel):
         apply_button.grid(row=5, columnspan=2, pady=30)
 
     def compile(self):
-        """Retrieve input values and draw the selected second-order line."""
         try:
             x = int(self.x_entry.get())
             y = int(self.y_entry.get())

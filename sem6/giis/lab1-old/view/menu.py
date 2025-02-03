@@ -14,7 +14,7 @@ class Menu(ttk.Frame):
         super().__init__(parent, relief="groove", borderwidth=1)
         self.pack(fill=tk.X, expand=False)
 
-        self.workspace = workspace  # Store workspace reference
+        self.workspace = workspace
         self.table = table
         self.current_mode = Mode.none.value
         self.current_line = Line.none.value
@@ -29,7 +29,7 @@ class Menu(ttk.Frame):
         mode_button = ttk.Button(self, text='Выбрать режим', command=self.select_mode)
         line_button = ttk.Button(self, text='Линии второго порядка', command=self.select_line)
         compile_circle_button = ttk.Button(self, text='Построить линию второго порядка', command=self.compile_line)
-        clear_button = ttk.Button(self, text = 'Очистить')
+        clear_button = ttk.Button(self, text = 'Очистить', command = self.clear_data)
 
         compile_segment_button.pack(side = LEFT, padx = 10, pady = 20)
         compile_circle_button.pack(side = LEFT, padx = 10, pady = 20)
@@ -66,3 +66,8 @@ class Menu(ttk.Frame):
 
     def compile_line(self):
         CompileCircleWindow(self)
+
+    def clear_data(self):
+        self.table.clear_table()
+        self.workspace.clear_canvas()
+
