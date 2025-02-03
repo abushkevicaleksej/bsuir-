@@ -29,11 +29,11 @@ class Workspace(ttk.Frame):
             screen_y = center_y - i * self.scale_factor
 
             self.canvas.create_line(screen_x, 0, screen_x, self.canvas_height, fill="lightgray")
-            if i % 5 == 0:
+            if i % 1 == 0:
                 self.canvas.create_text(screen_x + 5, center_y + 5, text=str(i), anchor="nw", font=("Arial", 8))
 
             self.canvas.create_line(0, screen_y, self.canvas_width, screen_y, fill="lightgray")
-            if i % 5 == 0:
+            if i % 1 == 0:
                 self.canvas.create_text(center_x + 5, screen_y + 5, text=str(i), anchor="nw", font=("Arial", 8))
 
         self.canvas.create_line(0, center_y, self.canvas_width, center_y, fill="black", width=2)  # X-ось
@@ -53,10 +53,11 @@ class Workspace(ttk.Frame):
 
             self.canvas.create_oval(screen_x - 1, screen_y - 1, screen_x + 1, screen_y + 1, fill=color, outline=color)
 
-            cell_x1 = center_x + (x - 0.5) * self.scale_factor
-            cell_y1 = center_y - (y + 0.5) * self.scale_factor
-            cell_x2 = center_x + (x + 0.5) * self.scale_factor
-            cell_y2 = center_y - (y - 0.5) * self.scale_factor
+            cell_x1 = center_x + (int(x)) * self.scale_factor - self.scale_factor / 2
+            cell_y1 = center_y - (int(y) + 1) * self.scale_factor + self.scale_factor / 2
+            cell_x2 = center_x + (int(x) + 1) * self.scale_factor - self.scale_factor / 2
+            cell_y2 = center_y - (int(y)) * self.scale_factor + self.scale_factor / 2
+
             self.canvas.create_rectangle(cell_x1, cell_y1, cell_x2, cell_y2, fill=color, outline=color)
 
     def clear_canvas(self):
