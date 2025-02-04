@@ -1,0 +1,209 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<title>Краткое руководство по программированию на языке SCP в формате m4scp.</title>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=active.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{color:black;
+	mso-text-animation:none;
+	font-weight:bold;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;
+	vertical-align:super;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="17410"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=gray vlink=black style='tab-interval:35.4pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'><span style='font-size:11.0pt;
+font-weight:normal;mso-bidi-font-weight:bold'>Краткое руководство по <a
+href="М4SCP%20Examples.htm">программированию</a> на языке </span><span
+lang=EN-US style='font-size:11.0pt;mso-ansi-language:EN-US;font-weight:normal;
+mso-bidi-font-weight:bold'>SCP</span><span lang=EN-US style='font-size:11.0pt;
+font-weight:normal;mso-bidi-font-weight:bold'> </span><span style='font-size:
+11.0pt;font-weight:normal;mso-bidi-font-weight:bold'>в формате </span><span
+lang=EN-US style='font-size:11.0pt;mso-ansi-language:EN-US;font-weight:normal;
+mso-bidi-font-weight:bold'>m</span><span style='font-size:11.0pt;font-weight:
+normal;mso-bidi-font-weight:bold'>4</span><span class=SpellE><span lang=EN-US
+style='font-size:11.0pt;mso-ansi-language:EN-US;font-weight:normal;mso-bidi-font-weight:
+bold'>scp</span></span><span style='font-size:11.0pt;font-weight:normal;
+mso-bidi-font-weight:bold'>.<o:p></o:p></span></h1>
+
+<div align=center>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:480;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;height:39.55pt'>
+  <td width=660 valign=top style='width:495.25pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:39.55pt'>
+  <p class=MsoNormal style='margin-top:12.0pt;text-align:justify;tab-stops:
+  237.75pt'>Файлы формата <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4<span
+  class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>scp</span></span>
+  предназначены для хранения описания <span class=SpellE><span lang=EN-US
+  style='mso-ansi-language:EN-US'>scp</span></span>-программ, которое построено
+  на макроопределениях языка <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4.<i
+  style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;height:162.7pt'>
+  <td width=660 valign=top style='width:495.25pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:162.7pt'>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  0cm;margin-left:15.0pt;margin-bottom:.0001pt;tab-stops:237.75pt'><i
+  style='mso-bidi-font-style:normal'><a href="М4SCP%20Syntax.htm">Синтаксис
+  содержимого файлов формата <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4<span
+  class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>scp</span></span></a>.<span
+  style='mso-tab-count:1'>   </span><br>
+  <a href="М4SCP%20Styling.htm">Оформление</a>. <span style='mso-tab-count:
+  1'>                                                                         </span><br>
+  </i><i style='mso-bidi-font-style:normal'><span lang=BE style='mso-ansi-language:
+  BE'><a href="М4SCP%20Examples.htm">Пр<span lang=RU style='mso-ansi-language:
+  RU'>и</span>меры</a>.</span> <span style='mso-tab-count:1'>                                                                               </span><span
+  style='mso-spacerun:yes'> </span><o:p></o:p></i></p>
+  <p class=MsoNormal style='margin-top:12.0pt;tab-stops:237.75pt'><i
+  style='mso-bidi-font-style:normal'><span style='font-size:26.0pt;font-family:
+  Arial'><o:p>&nbsp;</o:p></span></i></p>
+  <p class=MsoNormal align=right style='margin-top:12.0pt;text-align:right;
+  tab-stops:237.75pt'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+  style='font-size:72.0pt;font-family:Arial;color:#003366;mso-ansi-language:
+  EN-US'>M</span></i><i style='mso-bidi-font-style:normal'><span
+  style='font-size:72.0pt;font-family:Arial;color:#003366'>4</span></i><i
+  style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:72.0pt;
+  font-family:Arial;color:#CCFFFF;mso-ansi-language:EN-US'>SC</span></i><i
+  style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:72.0pt;
+  font-family:Arial;color:#FFCC99;mso-ansi-language:EN-US'>P</span></i><i
+  style='mso-bidi-font-style:normal'><span lang=BE style='color:#CCFFFF;
+  mso-ansi-language:BE'><o:p></o:p></span></i></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:12.0pt;tab-stops:237.75pt'><i
+style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-top-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td width=660 valign=bottom style='width:495.25pt;border:none;border-top:
+  solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=right style='margin-top:12.0pt;text-align:right;
+  tab-stops:237.75pt'><i style='mso-bidi-font-style:normal'>2003 <span
+  class=SpellE>Ивашенко</span> В.П.<o:p></o:p></i></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:12.0pt;tab-stops:237.75pt'><i
+style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: reverse.m4scp
+// Description:
+///////////////////////////////////////////////////////
+//      Author: Yalchyk Ilya
+//        Date: 03.11.2013
+//    Location: /lib/chain/reverse
+// Output parameters:	1	-	state
+//			2	-	true
+//			3	-	history
+// Input parameters:	3	-	history = (set, ...)
+//			4	-	parameters = ((then_routine, then_parameters), (else_routine, else_parameters))
+//			5	-	logging
+// Execution input time complexity:	unlimited, logging dependable
+// Execution output time complexity: O(n) + logging_time
+// Execution input space complexity:	unlimited, logging dependable
+// Execution output space complexity:	O(n) + logging_time
+])
+
+procedure(chain_reverse,
+M4SCS(	[[
+		enter_message = /"chain_reverse: entering\n"/,
+		leave_message = /"chain_reverse: leaving\n"/,	
+
+		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",		
+		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
+		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+		chain_pop_destroy_singlet = "/lib/chain/pop_destroy_singlet/chain_pop_destroy_singlet",
+
+		chain_push = "/lib/chain/push/chain_push",
+		chain_push_first = "/lib/chain/push_first/chain_push_first",
+		chain_get_next = "/lib/chain/get_next/chain_get_next",
+		chain_pop_destroy = "/lib/chain/pop_destroy/chain_pop_destroy",
+
+		chain_destroy = "/lib/chain/destroy/chain_destroy",		
+		log_get = "/lib/log/get/log_get",
+
+		prml1, prml2, prml3,
+		prmg1, prmg2, prmg3, prmg4, prmg5, prmg6, prmg7, prmg8,
+		prmp1, prmp2, prmp3,
+		prmd1, prmd2,
+		prmr1, prmr2
+	]])
+M4SEC(	[[
+		chain_push_singlet = /../chain/push[SYFIX]/chain_push_singlet,
+		chain_push_first_singlet = /../chain/push_first[SYFIX]/chain_push_first_singlet,
+		chain_get_next_singlet = /../chain/get_next[SYFIX]/chain_get_next_singlet,
+		chain_pop_destroy_singlet = /../chain/pop_destroy[SYFIX]/chain_pop_destroy_singlet,
+
+		chain_push = /../chain/push[SYFIX]/chain_push,
+		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
+		chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+		chain_pop_destroy = /../chain/pop_destroy[SYFIX]/chain_pop_destroy,
+
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+		log_get = /../log/get[SYFIX]/log_get,
+
+		prml1, prml2, prml3,
+		prmg1, prmg2, prmg3, prmg4, prmg5, prmg6, prmg7, prmg8,
+		prmp1, prmp2, prmp3,
+		prmd1, prmd2,
+		prmr1, prmr2
+	]]),
+	[{
+		state, true, stack, parameters, logging,
+		logger, log, dlogger, descr,
+		empty, chain, stack2, element, rchain, arc2, set,
+		then_chain, then_routine, then_parameters,
+		else_chain, else_routine, else_parameters
+	}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: stack,
+		4_: in_: parameters, 
+		5_: in_: logging
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+call([1_: fixed_: log_get, 2_: fixed_: prml1 = [{1_: logging, 2_: logger, 3_: log, 4_: dlogger}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// start parsing parameters
+genEl([1_: assign_: node_: const_: empty])
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg1 = [{1_: parameters, 2_: parameters, 3_: then_chain}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg2 = [{1_: parameters, 2_: parameters, 3_: else_chain}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// finish parsing parameters
+
+// start taking a chain from the stack
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg3 = [{1_: stack, 2_: stack2, 3_: chain}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: chain
+], ,else_routine_call)
+// finish taking a chain from the stack
+
+ifVarAssign([
+	1_: log
+], , not_log_chain)
+
+genElStr3([
+	1_: assign_: node_: const_: set,
+	2_: assign_: arc_: const_: pos_: temporary_: actual_: arc2,
+	3_: fixed_: chain
+])
+
+call([1_: fixed_: logger, 2_: fixed_: prml2 = [{1_: log, 2_: set}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+eraseEl([1_: fixed_: f_: set])
+
+label(not_log_chain)
+// start getting the first element of chain and creating the reversed chain
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg4 = [{1_: chain, 2_: chain, 3_: element}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: element
+], ,success)
+
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prmp1 = [{1_: element, 2_: rchain, 3_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// finish getting the first element of chain and creating the reversed chain
+
+// start adding other elements of current chain into the reversed chain
+label(next_element)
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg5 = [{1_: chain, 2_: chain, 3_: element}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: element
+], ,success)
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prmp2 = [{1_: rchain, 2_: element, 3_: rchain, 4_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr], next_element)
+
+label(success)
+// finish adding other elements of current chain into the reversed chain
+
+ifVarAssign([
+	1_: log
+], , not_log_rchain)
+
+genElStr3([
+	1_: assign_: node_: const_: set,
+	2_: assign_: arc_: const_: pos_: temporary_: actual_: arc2,
+	3_: fixed_: rchain
+])
+
+call([1_: fixed_: logger, 2_: fixed_: prml3 = [{1_: log, 2_: set}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+eraseEl([1_: fixed_: f_: set])
+
+label(not_log_rchain)
+
+// start removing old chain from stack
+call([1_: fixed_: chain_pop_destroy, 2_: fixed_: prmd1 = [{1_: stack, 2_: stack, 3_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// finish removing old chain from stack
+
+// start pushing reversed chain in the stack
+call([1_: fixed_: chain_push, 2_: fixed_: prmp3 = [{1_: stack, 2_: rchain, 3_: stack, 4_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// finish pushing reversed chain in the stack
+
+// start getting then_routine
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg6 = [{1_: then_chain, 2_: then_chain, 3_: then_routine}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// finish getting then_routine
+
+// start getting then_parameters
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg7 = [{1_: then_chain, 2_: then_chain, 3_: then_parameters}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// finish getting then_parameters
+
+// if ~then_parameters, => then_parameters = empty
+ifVarAssign([
+	1_: then_parameters
+], then_parameters_is_not_empty)
+
+varAssign([
+	1_: assign_: then_parameters,
+	2_: fixed_: empty
+])
+// endif
+
+label(then_parameters_is_not_empty)
+// if then_routine AND then_routine != then_parameters, => call then_routine
+ifVarAssign([
+	1_: then_routine
+], , state_true)
+
+ifCoin([
+	1_: then_routine,
+	2_: then_parameters
+], state_true)
+
+call([1_: fixed_: then_routine, 2_: fixed_: prmr1 = [{1_: state, 2_: true, 3_: stack, 4_: then_parameters, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr], pop_rchain, pop_rchain)
+
+// else state = true
+label(state_true)
+varAssign([
+	1_: assign_: state,
+	2_: fixed_: true
+])
+// endif
+
+// start removing new chain from stack
+label(pop_rchain)
+call([1_: fixed_: chain_pop_destroy, 2_: fixed_: prmd2 = [{1_: stack, 2_: stack, 3_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr], finish, finish)
+// finish removing new chain from stack
+
+label(else_routine_call)
+// start getting else_routine
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg7 = [{1_: else_chain, 2_: else_chain, 3_: else_routine}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// finish getting else_routine
+
+// start getting else_parameters
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg8 = [{1_: else_chain, 2_: else_chain, 3_: else_parameters}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// finish getting else_parameters
+
+// if ~else_parameters, => else_parameters = empty
+ifVarAssign([
+	1_: else_parameters
+], else_parameters_is_not_empty)
+
+varAssign([
+	1_: assign_: else_parameters,
+	2_: fixed_: empty
+])
+// endif
+
+// if else_routine AND else_routine != else_parameters, => call else_routine
+label(else_parameters_is_not_empty)
+ifVarAssign([
+	1_: else_routine
+], , finish)
+
+ifCoin([
+	1_: else_routine,
+	2_: else_parameters
+], finish)
+
+call([1_: fixed_: else_routine, 2_: fixed_: prmr2 = [{1_: state, 2_: true, 3_: stack, 4_: else_parameters, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+// endif
+
+label(finish)
+eraseEl([1_: fixed_: f_: empty])
+
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

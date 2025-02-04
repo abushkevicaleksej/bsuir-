@@ -1,0 +1,327 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<title>Краткое руководство по программированию на языке SCP в формате m4scp.</title>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=active.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{color:black;
+	mso-text-animation:none;
+	font-weight:bold;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;
+	vertical-align:super;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="15362"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=gray vlink=black style='tab-interval:35.4pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<p class=MsoFootnoteText style='margin-bottom:12.0pt'><span style='font-family:
+"Courier New";color:green'>/////////////////////////////////////////////////////<br>
+//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Файл: __</span><span lang=EN-US
+style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>file</span><span
+style='font-family:"Courier New";color:green'>__</span><b><span
+style='font-family:"Courier New";color:red'><br>
+</span></b><span style='font-family:"Courier New";color:green'>//&nbsp;<span
+style='mso-spacerun:yes'>   </span>Описание: программа - пример организации</span><span
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'> <span
+lang=BE><br>
+</span></span><span style='font-family:"Courier New";color:green'>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:
+BE'>ветвлений в алгоритме</span><span style='font-family:"Courier New";
+color:green'><br>
+//&nbsp; Размещение: /</span><span style='font-family:"Courier New"'><br>
+<span style='color:green'>/////////////////////////////////////////////////////<br>
+//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Автор: ИВП</span><b><span
+style='color:red'><br>
+</span></b><span style='color:green'>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Дата: 9.02.2003</span><b><span style='color:red'><br>
+</span></b><span style='color:green'>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+создано<br>
+<br>
+</span><span style='color:blue'>#</span></span><span lang=EN-US
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'>include</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New";color:red'>&quot;</span><span lang=EN-US style='font-family:"Courier New";
+color:red;mso-ansi-language:EN-US'><a href="scp_keynodes.scsy"><span
+class=SpellE>scp</span><span lang=RU style='mso-ansi-language:RU'>_</span><span
+class=SpellE>keynodes</span><span lang=RU style='mso-ansi-language:RU'>.</span><span
+class=SpellE>scsy</span></a></span><span style='font-family:"Courier New";
+color:red'>&quot;<span style='mso-tab-count:1'> </span><br>
+<br>
+</span><span style='font-family:"Courier New";color:green'>/////////////////////////////////////////////////////<br>
+// текст программ</span><span lang=BE style='font-family:"Courier New";
+color:green;mso-ansi-language:BE'>ы<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>program</span><span style='font-family:"Courier New"'>(</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>condition</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>sample</span><span style='font-family:
+"Courier New"'>,<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-family:"Courier New"'> [<span class=GramE>[ </span></span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>S</span><span
+style='font-family:"Courier New"'>, <span style='color:green'>// </span></span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>объявляем</span><span
+style='font-family:"Courier New";color:green'> множество </span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>S</span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>C&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:BE'> </span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>//</span><span
+lang=BE style='font-family:"Courier New";color:green'> </span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'>объявляем</span><span
+style='font-family:"Courier New";color:green'> множество </span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>C</span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New"'>]],<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'> [{ </span><span
+class=SpellE><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'>var</span></span><span lang=BE style='font-family:"Courier New";
+mso-ansi-language:BE'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:BE'> </span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'>}])<br>
+<br>
+</span><a name=label><span lang=EN-US style='font-family:"Courier New";
+color:red;mso-ansi-language:EN-US'>label</span></a><span style='mso-bookmark:
+label'></span><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'>(<span class=SpellE>cs_first_condition</span>)<br>
+<a name=ifVarAssign></a><span class=SpellE><span style='mso-bookmark:ifVarAssign'><span
+style='color:red'>ifVarAssign</span></span></span></span><span
+style='mso-bookmark:ifVarAssign'></span><span lang=BE style='font-family:"Courier New";
+mso-ansi-language:BE'>([<span style='color:fuchsia'>1_</span>:</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>&nbsp;<span
+class=SpellE>var</span>],<span class=SpellE>cs_second_condition</span>)</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:BE'> </span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'><br>
+</span><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'><br>
+<a name=varAssign></a><span class=SpellE><span style='mso-bookmark:varAssign'><span
+style='color:red'>varAssign</span></span></span></span><span style='mso-bookmark:
+varAssign'></span><span lang=BE style='font-family:"Courier New";mso-ansi-language:
+BE'>([<span style='color:fuchsia'>1_</span>:</span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>&nbsp;assign_: <span
+class=SpellE>var</span>,<br>
+<span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:BE'> </span><span
+lang=BE style='font-family:"Courier New";color:fuchsia;mso-ansi-language:BE'>2_</span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'>:</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:BE'> </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>fixed</span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'>_: </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>S],<span
+class=SpellE>cs_first_condition,cs_first_condition</span>)<br>
+</span><span lang=BE style='font-family:"Courier New";mso-ansi-language:BE'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>label</span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>(<span class=SpellE>cs_second_condition</span>)<br>
+<a name=ifCoin></a><span class=SpellE><span style='mso-bookmark:ifCoin'><span
+style='color:red'>ifCoin</span></span></span></span><span style='mso-bookmark:
+ifCoin'></span><span lang=BE style='font-family:"Courier New";mso-ansi-language:
+BE'>([<span style='color:fuchsia'>1_</span>:</span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>&nbsp;fixed_: <span
+class=SpellE>var</span>,<br>
+<span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:BE'> </span><span
+lang=BE style='font-family:"Courier New";color:fuchsia;mso-ansi-language:BE'>2_</span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'>:</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>&nbsp;fixed</span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'>_: </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>S],,<span
+class=SpellE>cs_erase_var_value</span>)</span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:BE'> </span><span lang=BE
+style='font-family:"Courier New";mso-ansi-language:BE'><br>
+</span><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'><br>
+<span class=SpellE><span style='color:red'>varAssign</span></span></span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'>([<span
+style='color:fuchsia'>1_</span>:</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>&nbsp;assign_: <span class=SpellE>var</span>,<br>
+<span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:BE'> </span><span
+lang=BE style='font-family:"Courier New";color:fuchsia;mso-ansi-language:BE'>2_</span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'>:</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:BE'> </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>fixed</span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'>_: </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>C],<span
+class=SpellE>cs_first_condition,cs_first_condition</span>)<br>
+<br>
+<span style='color:red'>label</span>(<span class=SpellE>cs_erase_var_value</span>)<br>
+<a name=varErase></a><span class=SpellE><span style='mso-bookmark:varErase'><span
+style='color:red'>varErase</span></span></span></span><span style='mso-bookmark:
+varErase'></span><span lang=BE style='font-family:"Courier New";mso-ansi-language:
+BE'>([<span style='color:fuchsia'>1_</span>:</span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>&nbsp;fixed_: <span
+class=SpellE>var</span>])<br>
+</span><span lang=BE style='font-family:"Courier New";mso-ansi-language:BE'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>return</span><span lang=BE style='font-family:"Courier New";mso-ansi-language:
+BE'>()<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>end</span><span lang=BE style='font-family:"Courier New";color:red;
+mso-ansi-language:BE'><br>
+</span><span lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:
+BE'>/* результат работы программы в протоколе будет <br>
+выглядеть следующим образом:<br>
+</span><span lang=BE style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+BE'><span style='mso-spacerun:yes'> </span>...<br>
+</span><span lang=BE style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><span style='mso-spacerun:yes'> </span></span><span lang=BE
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op1 of prg. condition_sample(006C3D20)</span><span lang=EN-US
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op2 of prg. condition_sample(006C3D20)</span><span lang=EN-US
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op1 of prg. condition_sample(006C3D20)</span><span lang=BE
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'> </span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op3 of prg. condition_sample(006C3D20)</span><span lang=BE
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'> </span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op4 of prg. condition_sample(006C3D20)</span><span lang=BE
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'> </span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op1 of prg. condition_sample(006C3D20)</span><span lang=BE
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'> </span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op3 of prg. condition_sample(006C3D20)</span><span lang=EN-US
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op5 of prg. condition_sample(006C3D20)</span><span lang=EN-US
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing
+condition_sample_op6 of prg. condition_sample(006C3D20)</span><span lang=EN-US
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:#0099CC;
+mso-ansi-language:BE'><span style='mso-spacerun:yes'> </span></span><span
+lang=BE style='font-family:"Courier New";color:#0099CC;mso-ansi-language:BE'>...</span><span
+lang=EN-GB style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-GB'><br>
+</span><span lang=EN-GB style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-GB'>*/<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

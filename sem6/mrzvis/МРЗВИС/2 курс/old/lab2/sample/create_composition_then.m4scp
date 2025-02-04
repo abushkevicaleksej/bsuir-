@@ -1,0 +1,159 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: create_composition_then.m4scp
+// Description: then_routine for create_composition procedure 
+///////////////////////////////////////////////////////
+//      Author: Yalchik Ilya
+//        Date: 01.12.2013
+//    Location: /lib/set/create_composition_then
+// Output parameters:	1	-	state
+//			2	-	true
+//			3	-	history
+// Input parameters:	3	-	history = (arcA, args_chain=(relationB), ...)
+//			4	-	parameters = (composition, ...)
+//			5	-	logging
+// Execution input time complexity:	unlimited, logging dependable
+// Execution output time complexity:	O(n) + logging time
+// Execution input space complexity:	unlimited, logging dependable
+// Execution output space complexity:	O(n) + logging time
+])
+
+procedure(set_create_composition_then,
+M4SCS(	[[
+		enter_message = /"\n\nTHEN: set_create_composition_then: entering\n\n"/,
+		leave_message = /"\n\nTHEN: set_create_composition_then: leaving\n\n"/,
+
+		chain_get_next = "/lib/chain/get_next/chain_get_next",
+		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+		chain_push = "/lib/chain/push/chain_push",
+		chain_push_first = "/lib/chain/push_first/chain_push_first",
+		chain_destroy = "/lib/chain/destroy/chain_destroy",
+
+		iterator_create_apa_output = "/lib/iterator/create_APA_output/iterator_create_APA_output",
+		iterator_embedded_cycle_filter = "/lib/iterator/embedded_cycle_filter/iterator_embedded_cycle_filter",
+		set_build_composition_pair = "/lib/set/build_composition_pair/set_build_composition_pair",
+
+		prmp1, prmp2, prmp3, prmp4, prmp5, prmp6, prmp7,
+		prmg1, prmg2, prmg3, prmg4, prmg5, prmd1, prmd2, prmd3, prmf1
+	]])
+M4SEC(	[[		
+		chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+		chain_get_next_singlet = /../chain/get_next[SYFIX]/chain_get_next_singlet,
+		chain_push = /../chain/push[SYFIX]/chain_push,
+		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+
+		iterator_create_apa_output = /../iterator/create_APA_output[SYFIX]/iterator_create_APA_output,
+		iterator_embedded_cycle_filter = /../iterator/embedded_cycle_filter[SYFIX]/iterator_embedded_cycle_filter,
+		set_build_composition_pair = /../set/build_composition_pair[SYFIX]/set_build_composition_pair,
+
+		prmp1, prmp2, prmp3, prmp4, prmp5, prmp6, prmp7,
+		prmg1, prmg2, prmg3, prmg4, prmg5, prmd1, prmd2, prmd3, prmf1
+	]]), 
+	[{
+		state, true, history, parameters, logging,
+		link, outlink1, outlink2, result_set_link,
+		result_set, args_chain, iterator_create,
+		relationB, link2, arcA, args_chain2,
+		singleton, arc2, empty, descr
+	}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: history,
+		4_: in_: parameters, 
+		5_: in_: logging
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+genEl([1_: assign_: node_: const_: empty])
+
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg1 = [{1_: history, 2_: link, 3_: arcA}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg4 = [{1_: link, 2_: link, 3_: args_chain}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg5 = [{1_: args_chain, 2_: link, 3_: relationB}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg2 = [{1_: parameters, 2_: link, 3_: result_set}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: link],, final)
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg3 = [{1_: link, 2_: link, 3_: iterator_create}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: iterator_create], do)
+
+varAssign([1_: assign_: iterator_create, 2_: fixed_: iterator_create_apa_output])
+
+label(do)
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp1 = [{1_: iterator_create, 2_: outlink1, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp2 = [{1_: outlink1, 2_: empty, 3_: outlink1, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+genElStr3([
+	1_: assign_: node_: const_: singleton,
+	2_: assign_: arc_: const_: pos_: temporary_: actual_: arc2,
+	3_: fixed_: result_set
+])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp3 = [{1_: singleton, 2_: outlink2, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp4 = [{1_: outlink2, 2_: result_set_link, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp5 = [{1_: result_set_link, 2_: set_build_composition_pair, 3_: result_set_link, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp6 = [{1_: outlink1, 2_: result_set_link, 3_: outlink1, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp7 = [{1_: outlink1, 2_: relationB, 3_: outlink1, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: iterator_embedded_cycle_filter, 2_: fixed_: prmf1 = [{1_: empty, 2_: empty, 3_: history, 4_: outlink1, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy,	2_: fixed_: prmd1 = [{1_: outlink1, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([	1_: fixed_: chain_destroy, 2_: fixed_: prmd2 = [{1_: result_set_link, 2_: empty}],	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([	1_: fixed_: chain_destroy, 2_: fixed_: prmd3 = [{1_: outlink2, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+eraseEl([1_: fixed_: f_: singleton])
+
+label(final)
+eraseEl([1_: fixed_: f_: empty])
+
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

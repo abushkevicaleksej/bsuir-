@@ -1,0 +1,227 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: double_neg_elimination.m4scp
+// Description: eliminates double negotiation
+///////////////////////////////////////////////////////
+//      Author: Yalchyk Ilya
+//        Date: 22.12.2013
+//    Location: /lib/chain_logic_formula/double_neg_elimination
+// Output parameters:	1	-	state
+//			2	-	true
+//			3	-	stack
+// Input parameters:	3	-	stack = (formula,[subformula,] ...)
+//			4	-	parameters = ( (then_routine, then_parameters),
+//										(else_routine, else_parameters),
+//										(strategy_routine, strategy_parameters),
+//										[(comparator, comparator_parameters),] ...)
+//			5	-	logging
+// Execution input time complexity:	constant, logging dependable
+// Execution output time complexity:	logging dependable
+// Execution input space complexity:	constant, logging dependable
+// Execution output space complexity:	logging dependable
+])
+
+procedure(chain_logic_formula_double_neg_elimination,
+M4SCS(	[[
+		enter_message = /"chain_logic_formula_double_neg_elimination: entering\n"/,
+		leave_message = /"chain_logic_formula_double_neg_elimination: leaving\n"/,
+
+		chain_get_next = "/lib/chain/get_next/chain_get_next",
+		log_get = "/lib/log/get/log_get";
+		chain_push = "/lib/chain/push/chain_push",
+
+		prmg1, prmg2, prmg3, prmg4, prmg5, prmg6, prmg7, prmg8, prmg9, prmg10, prmg11, prmg12, prmg13, prmg14, prmg15,
+		prmp1, prmc1, prmc2, prmc3
+	]])
+M4SEC(	[[
+		chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+		log_get = /../log/get[SYFIX]/log_get,
+		chain_push = /../chain/push[SYFIX]/chain_push,
+
+		prmg1, prmg2, prmg3, prmg4, prmg5, prmg6, prmg7, prmg8, prmg9, prmg10, prmg11, prmg12, prmg13, prmg14, prmg15,
+		prmp1, prmc1, prmc2, prmc3
+	]]),
+	[{
+		state, true, stack, parameters, logging,
+		double_neg_formula, neg_subformula, subformula, negotiation,
+		then_chain, else_chain, strategy_chain, comparator_chain,
+		then_routine, then_parameters,
+		else_routine, else_parameters,
+		strategy_routine, strategy_parameters, strategy_state, strategy_true,
+		comparator_routine, comparator_parameters,
+		empty, link, descr
+	}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: stack, 
+		4_: in_: parameters,
+		5_: in_: logging
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+genEl([1_: assign_: node_: const_: empty])
+
+genEl([1_: assign_: node_: const_: strategy_state])
+
+genEl([1_: assign_: node_: const_: strategy_true])
+
+// достаём все параметры
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg6 = [{1_: parameters, 2_: parameters, 3_: then_chain}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: then_chain
+], , else_branch)
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg7 = [{1_: parameters, 2_: parameters, 3_: else_chain}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: else_chain
+], , else_branch)
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg8 = [{1_: parameters, 2_: parameters, 3_: strategy_chain}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: strategy_chain
+], , else_branch)
+
+// достаём процедуру определения типа формулы и стратегии вызова процедуры равносильного преобразования и её параметры
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg10 = [{1_: strategy_chain, 2_: strategy_chain, 3_: strategy_routine}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: strategy_routine
+], , else_branch)
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg11 = [{1_: strategy_chain, 2_: strategy_chain, 3_: strategy_parameters}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: strategy_parameters
+], , else_branch)
+
+// получаем форумулу с двойным отрицанием из стека
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg1 = [{1_: stack, 2_: link, 3_: double_neg_formula}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: double_neg_formula
+], , else_branch)
+
+// получаем отрицание из форумулы с двойным отрицанием
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg2 = [{1_: double_neg_formula, 2_: double_neg_formula, 3_: negotiation}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: negotiation
+], , else_branch)
+
+// получаем подформулу с отрицанием из форумулы с двойным отрицанием
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg3 = [{1_: double_neg_formula, 2_: double_neg_formula, 3_: neg_subformula}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: neg_subformula
+], , else_branch)
+
+// получаем отрицание из подфорумулы с отрицанием
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg4 = [{1_: neg_subformula, 2_: neg_subformula, 3_: negotiation}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: negotiation
+], , else_branch)
+
+// получаем подформулу из подфорумулы с отрицанием
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg5 = [{1_: neg_subformula, 2_: neg_subformula, 3_: subformula}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: subformula
+], , else_branch)
+
+// помещаем полученную подформулу в стек
+call([1_: fixed_: chain_push, 2_: fixed_: prmp1 = [{1_: stack, 2_: subformula, 3_: stack, 4_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// то вызываем процедуру определения типа формулы и стратегии вызова процедуры равносильного преобразования
+// с полученной подформулой на вершине стека
+call([1_: fixed_: strategy_routine, 2_: fixed_: prmc1 = [{1_: strategy_state, 2_: strategy_true, 3_: stack, 4_: strategy_parameters, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifCoin([
+	1_: fixed_: strategy_state,
+	2_: fixed_: strategy_true
+], , else_branch)
+
+// если ошибок не произошло, то вызываем процедуру then
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg12 = [{1_: then_chain, 2_: then_chain, 3_: then_routine}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg13 = [{1_: then_chain, 2_: then_chain, 3_: then_parameters}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: then_routine, 2_: fixed_: prmc2 = [{1_: empty, 2_: empty, 3_: stack, 4_: then_parameters, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr], , finish)
+
+eraseEl([1_: fixed_: f_: strategy_state ], finish)
+
+// если произошла ошибочная ситуация, то вызываем процедуру else
+label(else_branch)
+ifVarAssign([
+	1_: else_chain
+], , fatal_else_branch)
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg14 = [{1_: else_chain, 2_: else_chain, 3_: else_routine}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: else_routine
+], , fatal_else_branch)
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg15 = [{1_: else_chain, 2_: else_chain, 3_: else_parameters}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([
+	1_: else_parameters
+], , fatal_else_branch)
+
+call([1_: fixed_: else_routine, 2_: fixed_: prmc3 = [{1_: empty, 2_: empty, 3_: stack, 4_: else_parameters, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+label(fatal_else_branch)
+eraseEl([1_: fixed_: f_: strategy_state ])
+
+eraseEl([1_: fixed_: f_: strategy_true ])
+
+label(finish)
+eraseEl([1_: fixed_: f_: empty ])
+
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

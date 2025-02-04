@@ -1,0 +1,250 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: build_composition_pair.m4scp
+// Description: check if pair has composition and add composition arc to the given composition set
+///////////////////////////////////////////////////////
+//      Author: Yalchyk Ilya
+//        Date: 01.12.2013
+//    Location: /lib/set/build_composition_pair
+// Output parameters:	1	-	state
+//			2	-	true
+//			3	-	history
+// Input parameters:	3	-	history = (arcA, arcB, ...)
+//			4	-	parameters = (composition, (comparator, comparator_params), ...)
+//			5	-	logging
+// Execution input time complexity:	constant, logging dependable
+// Execution output time complexity:	logging dependable
+// Execution input space complexity:	constant, logging dependable
+// Execution output space complexity:	logging dependable
+])
+
+procedure(set_build_composition_pair,
+M4SCS(	[[
+		enter_message = /"build_composition_pair: entering\n\n"/,
+		leave_message = /"build_composition_pair: leaving\n"/,
+		test_message = /"\n\n\nbuild_composition_pair: GENERATE\n"/,
+
+		test1_message = /"\n\n\nbuild_composition_pair: TEST 1\n"/,
+
+		test2_message = /"\n\n\nbuild_composition_pair: TEST 2"/,
+
+		test3_message = /"\n\n\nbuild_composition_pair: TEST 3\n"/,
+
+		test4_message = /"\n\n\nbuild_composition_pair: TEST 4\n"/,
+
+		test5_message = /"\n\n\nbuild_composition_pair: TEST 5\n"/,
+
+		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+		chain_get_next = "/lib/chain/get_next/chain_get_next",
+		chain_destroy = "/lib/chain/destroy/chain_destroy",
+		chain_push_singlet = "/lib/chain/push_singlet/chain_push_singlet",
+		chain_push_first_singlet = "/lib/chain/push_first_singlet/chain_push_first_singlet",
+		set_comparator_simple = "/lib/set/comparator_simple/set_comparator_simple",
+		log_get = "/lib/log/get/log_get";
+		prmg001, prmg002, prmp001, prmp002, prmc1, prmd1,
+		prmg1, prmg2, prmg3, prml1, prml2
+	]])
+M4SEC(	[[
+		chain_get_next_singlet = /../chain/get_next[SYFIX]/chain_get_next_singlet,
+		chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+		set_comparator_simple = /../set/comparator_simple[SYFIX]/set_comparator_simple,
+		log_get = /../log/get[SYFIX]/log_get,
+		prmg001, prmg002, prmp001, prmp002, prmc1, prmd1,
+		prmg1, prmg2, prmg3, prml1, prml2
+	]]),
+	[{
+		state, true, history, parameters, logging,
+		arcA, arcB, comparator_pair,
+		comparator, comparator_state, comparator_true, comparator_stack, comparator_parameters,
+		dlogger, logger, log, data,
+		composition, relationA, relationB,
+		newElementArc, elementArcA, elementArcB,
+		elem1, elem2, elem3, relArc, elemA, elemB,
+		empty, data, link, link2, descr
+	}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: history, 
+		4_: in_: parameters,
+		5_: in_: logging
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+genEl([1_: assign_: comparator_state])
+
+genEl([1_: assign_: comparator_true])
+
+genEl([1_: assign_: empty])
+
+// получаем то множество, в которое будем добавлять элементы (дуги) композиции
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg1 = [{1_: parameters, 2_: link, 3_: composition}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// получаем пару компаратор-параметры
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg1 = [{1_: link, 2_: link2, 3_: comparator_pair}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// если пары там не оказалось, то пропускаем получение компаратора и его параметров
+ifVarAssign([
+	1_: comparator_pair 
+], , dont_get_comparator)
+
+// получаем параметры компаратора
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg001 = [{1_: comparator_pair, 2_: comparator_pair, 3_: comparator_parameters}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// получаем компаратор
+call([1_: fixed_: chain_get_next, 2_: fixed_: prmg002 = [{1_: comparator_pair, 2_: link, 3_: comparator}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr], skip_assign_default_comparator)
+
+label(dont_get_comparator)
+varAssign([
+	1_: assign_: comparator,
+	2_: fixed_: set_comparator_simple
+])
+
+varAssign([
+	1_: assign_: comparator_parameters,
+	2_: fixed_: empty
+])
+
+label(skip_assign_default_comparator)
+// получаем из стека текущую дугу из первого заданного слотового отношения
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg2 = [{1_: history, 2_: link, 3_: arcA}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// получаем из стека текущую дугу из второго заданного слотового отношения
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg3 = [{1_: link, 2_: link2, 3_: arcB}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// определяем, можно ли построить для текущих элементов, входящих в слотовые отношения, дугу композиции
+// будем сравнивать elemA и elemB
+searchElStr3([
+	1_: assign_: node_: const_: relationA,
+	2_: fixed_: arcA,
+	3_: assign_: arc_: const_: pos_: actual_: elementArcA
+], ,)
+
+searchElStr3([
+	1_: assign_: node_: const_: elem1,
+	2_: fixed_: elementArcA,
+	3_: assign_: const_: elemA
+], ,)
+
+searchElStr3([
+	1_: assign_: node_: const_: relationB,
+	2_: fixed_: arcB,
+	3_: assign_: arc_: const_: pos_: actual_: elementArcB
+], ,)
+
+searchElStr3([
+	1_: assign_: node_: const_: elemB,
+	2_: fixed_: elementArcB,
+	3_: assign_: const_: elem3
+], ,)
+
+// заносим сравниваемые элементы в стек компаратора
+call([1_: fixed_: chain_push_first_singlet, 2_: fixed_: prmp001 = [{1_: elemA, 2_: comparator_stack, 3_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_singlet, 2_: fixed_: prmp002 = [{1_: comparator_stack, 2_: elemB, 3_: comparator_stack, 4_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: comparator, 2_: fixed_: prmc1 = [{1_: comparator_state, 2_: comparator_true, 3_: comparator_stack, 4_: comparator_parameters, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd1 = [{1_: comparator_stack, 2_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifCoin([
+	1_: fixed_: comparator_state,
+	2_: fixed_: comparator_true
+], , finish)
+
+label(generate)
+// если дошли сюда, значит строим дугу композиции
+// если обе дуги слотовых отношений постоянные, то генерируем постоянную дугу композиции
+// иначе генерируем временную дугу композиции
+// а также добавляем дугу композиции в заданное множество
+ifType([
+	1_: permanent_: elementArcA
+], , generateTempElementArc)
+
+ifType([
+	1_: permanent_: elementArcB
+], , generateTempElementArc)
+
+// генерация постоянной дуги
+genElStr5([
+	1_: fixed_: elem1,
+	2_: assign_: arc_: const_: fuz_: temporary_: actual_: newElementArc,
+	3_: fixed_: elem3,
+	4_: assign_: arc_: const_: pos_: permanent_: actual_: relArc,
+	5_: fixed_: composition
+], start_log)
+
+// генерация временной дуги
+label(generateTempElementArc)
+genElStr5([
+	1_: fixed_: elem1,
+	2_: assign_: arc_: const_: fuz_: temporary_: actual_: newElementArc,
+	3_: fixed_: elem3,
+	4_: assign_: arc_: const_: pos_: temporary_: actual_: relArc,
+	5_: fixed_: composition
+])
+
+
+DBG(M4SCS(print([1_: fixed_: test2_message])))
+
+label(start_log)
+// логирование
+call([1_: fixed_: log_get, 2_: fixed_: prml1 = [{1_: logging, 2_: logger, 3_: log, 4_: data}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: logger], , finish)
+
+genElStr3([ 
+	1_: assign_: node_: const_: data, 
+	2_: assign_: arc_: const_: pos_: temporary_: actual_: link, 
+	3_: fixed_: composition
+])
+
+call([1_: fixed_: logger, 2_: fixed_: prml2 = [{1_: log, 2_: data}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+eraseEl([1_: fixed_: f_: data])
+
+// конец программы
+label(finish)
+eraseEl([1_: fixed_: f_: comparator_state])
+
+ifVarAssign([
+	1_: comparator_true 
+], , skip_erase_comparator_true)
+
+eraseEl([1_: fixed_: f_: comparator_true])
+
+label(skip_erase_comparator_true)
+eraseEl([1_: fixed_: f_: empty])
+
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

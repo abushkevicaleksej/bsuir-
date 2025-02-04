@@ -1,0 +1,190 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+// Location: /lib/test/double_neg_elimination
+])
+
+procedure(test_double_neg_elimination,
+M4SCS(	[[
+		enter_message = /"test_double_neg_elimination: entering\n"/,
+		leave_message = /"test_double_neg_elimination: leaving\n"/,
+		
+		chain_push = "/lib/chain/push/chain_push",
+		chain_push_first = "/lib/chain/push_first/chain_push_first",
+		chain_destroy = "/lib/chain/destroy/chain_destroy",
+
+		chain_logic_formula_double_neg_elimination = "/lib/chain_logic_formula/double_neg_elimination/chain_logic_formula_double_neg_elimination",
+		test_double_neg_elimination_else = "/lib/test/double_neg_elimination_else/test_double_neg_elimination_else",
+		test_double_neg_elimination_then = "/lib/test/double_neg_elimination_then/test_double_neg_elimination_then",
+		chain_logic_formula_strategy_simple = "/lib/chain_logic_formula/strategy_simple/chain_logic_formula_strategy_simple",
+
+		prmp1, prmp2, prmp3, prmp4, prmp5, prmp6, prmp7, prmp8, prmp9, prmp10, prmp11, prmp12, prmp13, prmp14, prmp15,
+		prmd1, prmd2, prmd3, prmd4, prmd5, prmd6, prmd7, prmd8, prmg1, prmc1
+	]])
+M4SEC(	[[
+		chain_push = /../chain/push[SYFIX]/chain_push,
+		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+
+		chain_logic_formula_double_neg_elimination = /../chain_logic_formula/double_neg_elimination[SYFIX]/chain_logic_formula_double_neg_elimination,
+		test_double_neg_elimination_else = /../test/double_neg_elimination_else[SYFIX]/test_double_neg_elimination_else,
+		test_double_neg_elimination_then = /../test/double_neg_elimination_then[SYFIX]/test_double_neg_elimination_then,
+		chain_logic_formula_strategy_simple = /../chain_logic_formula/strategy_simple[SYFIX]/chain_logic_formula_strategy_simple,
+
+		prmp1, prmp2, prmp3, prmp4, prmp5, prmp6, prmp7, prmp8, prmp9, prmp10, prmp11, prmp12, prmp13, prmp14, prmp15,
+		prmd1, prmd2, prmd3, prmd4, prmd5, prmd6, prmd7, prmd8, prmg1, prmc1
+	]]), 
+	[{		
+		double_neg_formula, neg_subformula, subformula, negotiation, atom,
+		then_parameters, else_parameters, strategy_parameters, parameters, stack,
+		then_chain, else_chain, strategy_chain,
+		state, true, logging, empty, link, descr
+	}], 
+	{[]}
+) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+genEl([1_: assign_: node_: const_: state])
+genEl([1_: assign_: node_: const_: true])
+genEl([1_: assign_: node_: const_: logging])
+genEl([1_: assign_: node_: const_: empty])
+genEl([1_: assign_: node_: const_: atom])
+genEl([1_: assign_: node_: const_: negotiation])
+
+// создаём атомарную формулу
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp1 = [{1_: atom, 2_: subformula, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+M4SCS(
+	printEl([1_: fixed_: subformula])
+)
+
+// создаём формулу с отрицанием
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp2 = [{1_: subformula, 2_: neg_subformula, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp3 = [{1_: neg_subformula, 2_: negotiation, 3_: neg_subformula, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// создаём формулу с двойным отрицанием
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp4 = [{1_: neg_subformula, 2_: double_neg_formula, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp5 = [{1_: double_neg_formula, 2_: negotiation, 3_: double_neg_formula, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// создаём стек с формулой с двойным отрицанием на вершине
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp6 = [{1_: double_neg_formula, 2_: stack, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// создаём параметры для процедуры равносильного преобразования отрицания отрицания
+// создаём и заполняем strategy chain
+genEl([1_: assign_: node_: const_: strategy_parameters])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp7 = [{1_: strategy_parameters, 2_: strategy_chain, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp8 = [{1_: strategy_chain, 2_: chain_logic_formula_strategy_simple, 3_: strategy_chain, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// создаём и заполняем else chain
+genEl([1_: assign_: node_: const_: else_parameters])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp9 = [{1_: else_parameters, 2_: else_chain, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp10 = [{1_: else_chain, 2_: test_double_neg_elimination_else, 3_: else_chain, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+
+// создаём и заполняем then chain
+genEl([1_: assign_: node_: const_: then_parameters])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp11 = [{1_: then_parameters, 2_: then_chain, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp12 = [{1_: then_chain, 2_: test_double_neg_elimination_then, 3_: then_chain, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// PARAMETERS
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp13 = [{1_: strategy_chain, 2_: parameters, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp14 = [{1_: parameters, 2_: else_chain, 3_: parameters, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp15 = [{1_: parameters, 2_: then_chain, 3_: parameters, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+// вызываем процедуру равносильного преобразования отрицания отрицания
+call([1_: fixed_: chain_logic_formula_double_neg_elimination, 2_: fixed_: prmc1 = [{1_: state, 2_: true, 3_: stack, 4_: parameters, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+
+
+// чистим память
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd1 = [{1_: subformula, 2_: empty}],	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd2 = [{1_: neg_subformula, 2_: empty}],	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd3 = [{1_: double_neg_formula, 2_: empty}],	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd4 = [{1_: stack, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd5 = [{1_: parameters, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd6 = [{1_: then_chain, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd7 = [{1_: else_chain, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd8 = [{1_: strategy_chain, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+eraseEl([1_: fixed_: f_: then_parameters])
+eraseEl([1_: fixed_: f_: else_parameters])
+eraseEl([1_: fixed_: f_: strategy_parameters])
+
+eraseEl([1_: fixed_: f_: state])
+eraseEl([1_: fixed_: f_: true])
+eraseEl([1_: fixed_: f_: logging])
+eraseEl([1_: fixed_: f_: empty])
+eraseEl([1_: fixed_: f_: atom])
+eraseEl([1_: fixed_: f_: negotiation])
+eraseEl([1_: fixed_: f_: descr])
+
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

@@ -1,0 +1,2 @@
+http://scnedu.sourceforge.net/variety/_/index.html?variety=newerface.json&gradient=interscreen.json
+http://scnedu.sourceforge.net/variety/_/index.html?variety=fewerface.json&gradient=interscreen.json

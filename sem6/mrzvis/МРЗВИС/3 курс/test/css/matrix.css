@@ -1,0 +1,40 @@
+body		{background: linear-gradient(to bottom, MediumSeaGreen 0%, Black 22%); background: -webkit-linear-gradient(top, MediumSeaGreen 0%, Black 22%); background-color: Black; color: LawnGreen; scrollbar-base-color: MediumSeaGreen; scrollbar-arrow-color: Black; background-repeat: no-repeat; height: 100%; }
+
+::-webkit-scrollbar				{background-color: PaleGreen; }
+::-webkit-scrollbar-button:vertical:decrement	{background-image: -webkit-linear-gradient(bottom, MediumSeaGreen 0%, PaleGreen 100%); }
+::-webkit-scrollbar-button:vertical:increment	{background-image: -webkit-linear-gradient(top, MediumSeaGreen 0%, PaleGreen 100%); }
+::-webkit-scrollbar-button:horizontal:decrement	{background-image: -webkit-linear-gradient(right, MediumSeaGreen 0%, PaleGreen 100%); }
+::-webkit-scrollbar-button:horizontal:increment {background-image: -webkit-linear-gradient(left, MediumSeaGreen 0%, PaleGreen 100%); }
+::-webkit-scrollbar-track-piece			{background-color: PaleGreen; }
+::-webkit-scrollbar-thumb			{background-color: MediumSeaGreen; border: 1px solid Black; }
+::-webkit-scrollbar-resizer			{background-color: MediumSeaGreen; }
+/*::-webkit-scrollbar-corner			{background-color: MediumSeaGreen; }*/
+
+.button		{background-color: MediumSeaGreen; color: Black; margin: 0px; padding: 2px; border: 2px solid MediumSeaGreen; background-image: no;}
+.button:hover	{color: LightGreen;}
+#states,
+#set		{background-color: SeaGreen; color: Black; margin: 0px; padding: 2px; border: 2px solid MediumSeaGreen; background-image: no;}
+textarea,
+input		{background-color: Black; color: LightGreen; margin: 0px; padding: 2px; border: 2px solid MediumSeaGreen;}
+a		{background: SeaGreen; color: Black; text-decoration: none;}
+a:active	{color: LightGreen;}
+a:hover		{color: LawnGreen;}
+
+input[type="checkbox"]		{display:none;}
+input[type="checkbox"] + label	{background: none;}
+
+input[type="checkbox"] + label::before		{content: "+ "; display: inline-block; background: Black; color: Black; }
+input[type="checkbox"]:checked + label::before	{content: "+ "; display: inline-block; background: Black; color: LawnGreen; }
+
+#virtual_machine > a,
+#virtual_machine > div { padding: 1px; border: 1px solid MediumSeaGreen; background: SeaGreen; }
+
+#virtual_machine > a:nth-of-type(1),
+#virtual_machine #command_set:target ~ a:nth-of-type(2) {background: MediumSeaGreen; }
+#virtual_machine #command_set:target ~ a:nth-of-type(1) {background: SeaGreen; }
+
+/*TODO check this plz*/
+.menu	{background-color: SeaGreen;}
+
+.option	{border: 1px solid black; padding: 3px;}
+.option:hover	{background-color: LightGreen;}

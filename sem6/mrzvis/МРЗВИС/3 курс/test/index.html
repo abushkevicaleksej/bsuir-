@@ -1,0 +1,592 @@
+<html>
+  <head>
+    <link href="lib/jquery-ui/jquery-ui.css" rel="stylesheet"/>
+    <title>Variety Virtual Machine</title>
+    <style>
+#virtual_machine > div:nth-of-type(2),
+#virtual_machine #command_set:target ~ div:nth-of-type(1) {display: none; }
+
+#virtual_machine > div:nth-of-type(1),
+#virtual_machine #command_set:target ~ div:nth-of-type(2) {display: block; }
+
+#general          {width: 90%; margin-left:5%; }
+#show             {text-align: center; }
+#show_controls    {padding-bottom: 10px; }
+#show_modes       {padding-bottom: 10px; }
+#show_canvas      {padding-bottom: 10px; overflow-y: auto; min-height: 48px; height: auto; text-align: center; }
+#memory_values    {overflow-y: auto; resize: vertical; width: 100%; }
+#registers_values {overflow-y: auto; resize: vertical; width: 100%; height: auto; }
+#operation        {overflow-y: auto; resize: vertical; width: 100%; }
+#operations       {overflow-y: auto; resize: vertical; width: 100%; }
+#about            {text-align: right; }
+#ground           {text-align: left; position: fixed; left: 0; bottom: 0;}
+#stats            {position: absolute; top: 0px; left: 0px;}
+#memory_menu,
+#registers_menu,
+#memory_history_menu,
+#registers_history_menu,
+#viewport_menu    {display: none;}
+td                {vertical-align: top;}
+    </style>
+    <link href="css/matrix.css" rel="stylesheet"/>
+    <script type='text/javascript' src ="http://www.midijs.net/lib/midi.js"></script>
+    <script type="text/javascript" src ="lib/threejs/three.min.js"></script>
+    <script type="text/javascript" src ="lib/stats.min.js"></script>
+    <script type="text/javascript" src ="lib/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src ="lib/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src ="lib/jscolor/jscolor.js"></script>
+    <script type="text/javascript" src ="lib/jsonformatter.js"></script>
+    <!-- 
+    <script type="text/javascript" src ="lib/_/Huffman.js"></script>
+    <script type="text/javascript" src ="lib/_/download.js"></script>
+    <script type="text/javascript" src ="js/threevptest_old_version.js"></script>
+    -->
+    <script type="text/javascript" src ="js/tiny/tiny.js"></script>
+    <script type="text/javascript" src ="js/threevp3.js"></script>
+    <script type="text/javascript" src ="js/variety.js"></script>
+    <script type="text/javascript">
+var variety;
+var gradientor;
+var statsVisualizer;
+var memoryVisualizer;
+var memoryHistoryVisualizer;
+var registersVisualizer;
+var registersHistoryVisualizer;
+var animator;
+var process;
+var p;
+var f;
+var e;
+var g;
+var processorID = 0;
+
+window.onload = function() {
+  p = parseURLParameters(window.location.href);
+  e = false;
+  f = true;
+  g = {};
+  if (p.gradient) loadJSON(p.gradient,function(v) {g = v; e = true; f = false; loadVariety();}, function(p) {e = true; loadVariety();});
+  else loadVariety();
+}
+
+function loadVariety() {
+  if (f) g = {vr_volume: 64, volume: 1000, colors: ["#000000","#FFFFFF"], values: [0,4294967295]};
+
+  e = false;
+  f = true;
+  if (p.variety) loadJSON(p.variety,function(v) {p = v; e = true; f = false; init();}, function(p) {e = true; init();});
+  else init();
+}
+
+//TODO remove renderer types, move this method to threevp3
+function createCanvasVisualizers() {
+  memoryVisualizer = new ThreeVP3.ThreeArrayVisualizer({container: memory, width: ThreeVP3.Visualizer.DEFAULT_WIDTH, gradientor: gradientor, rendererType: "canvas"});
+  memoryHistoryVisualizer = new ThreeVP3.CanvasArrayHistoryVisualizer({container: memory_history, width: ThreeVP3.Visualizer.DEFAULT_WIDTH, gradientor: gradientor});
+  registersVisualizer = new ThreeVP3.ThreeArrayVisualizer({container: registers, width: g.vr_volume, gradientor: gradientor, rendererType: "canvas"});
+  registersHistoryVisualizer = new ThreeVP3.CanvasArrayHistoryVisualizer({container: registers_history, width: g.vr_volume, gradientor: gradientor});
+  statsVisualizer = new ThreeVP3.StatsVisualizer({container: stats});
+}
+
+function createWebGLVisualizers() {
+  memoryVisualizer = new ThreeVP3.ThreeArrayVisualizer({container: memory, width: ThreeVP3.Visualizer.DEFAULT_WIDTH, gradientor: gradientor, rendererType: "webgl"});
+  memoryHistoryVisualizer = new ThreeVP3.WebGLThreeArrayHistoryVisualizer({container: memory_history, width: ThreeVP3.Visualizer.DEFAULT_WIDTH, gradientor: gradientor});
+  registersVisualizer = new ThreeVP3.ThreeArrayVisualizer({container: registers, width: g.vr_volume, gradientor: gradientor, rendererType: "webgl"});
+  registersHistoryVisualizer = new ThreeVP3.WebGLThreeArrayHistoryVisualizer({container: registers_history, width: g.vr_volume, gradientor: gradientor});
+  statsVisualizer = new ThreeVP3.StatsVisualizer({container: stats});
+}
+
+function createVisualizers() {
+  if (ThreeVP3.Utils.WebGLDetector()) 
+    createWebGLVisualizers();
+  else
+    createCanvasVisualizers();
+  updateVisualizers();
+  animator = new ThreeVP3.Animator({animes: [memoryVisualizer,memoryHistoryVisualizer,registersVisualizer,registersHistoryVisualizer,statsVisualizer]});
+  animator.animate();
+  toggleVisualizers();
+}
+
+function createGradientor() {
+  gradientor = new ThreeVP3.Utils.Gradientor({colors: g.colors, values: g.values});
+}
+
+function init() {
+  if (f) p = {state: {volume: 1000},core: {quant: 6000, processor: [{state: {volume: 64}}]}};
+  p.callback = function(f) { if (f==undefined) { if (document.getElementById('hardware_update').checked) updateVisualizers(); } else if (document.getElementById('software_update').checked) { updateVisualizers(); f = 0; }; if (!document.getElementById('repeat').checked) pause(); return f; };
+  variety = new VirtualMachine(p);
+  if (g.volume == undefined) g.volume = variety.getManager().VOLUME;
+  if (g.vr_volume == undefined) g.vr_volume = variety.getProcessor(processorID).VOLUME;
+  createGradientor();
+  createVisualizers();
+  
+  var autocompleteCallback = function( name ) {
+      var s = variety.getProcessor(processorID).getOperation(name);
+      if (s != undefined) document.getElementById('operation').value = VirtualMachine.Processor.getOperationBody(s).toString();
+      document.getElementById('constructor').style.display = variety.getProcessor(processorID).isConstructor(name)?"":"none";
+      document.getElementById('instruction').style.display = variety.getProcessor(processorID).isConstructor(name)?"none":"";
+    }
+  
+  $( "#operation_name" ).autocomplete({
+    source: function(request, response) {
+      var interface = variety.getProcessor(processorID).getInterface();
+      var results = [];
+      for(var i = 0; i < interface.length; i++) {
+        if (interface[i].substr(0, request.term.length) == request.term) 
+          results.push(interface[i]);
+      }
+      response(results);
+    },
+    minLength: 0,
+    change: function(event, ui) {
+	autocompleteCallback(document.getElementById('operation_name').value);
+    },
+    select: function(event, ui) {
+	autocompleteCallback(ui.item.value);
+    }
+  });
+  $( "#operation_swap" ).autocomplete({
+    source: function(request, response) {
+      var interface = variety.getProcessor(processorID).getInterface();
+      var results = [];
+      for(var i = 0; i < interface.length; i++) {
+        if (interface[i].substr(0, request.term.length) == request.term) 
+          results.push(interface[i]);
+      }
+      response(results);
+    },
+    minLength: 0
+  });
+
+  document.getElementById('repeat').checked = true;
+  document.getElementById('constructor').style.display = "none";
+  
+  f = false;
+  if (p.core) if (p.core.resume) f = true;
+  toggle("pause",f);
+  toggle("resume",!f);
+
+  f = true;
+  if (g.control != undefined) if (g.control == false) f = false;
+  document.getElementById('show_control').checked = f;
+  toggle("about",f);
+  toggle("show",f);
+  toggle("virtual_machine",f);
+
+  f = true;
+  if (g.software != undefined) if (g.software == false) f = false;
+  document.getElementById('software_update').checked = f;
+  document.getElementById('hardware_update').checked = g.hardware || false;
+
+  f = true;
+  if (g.memory != undefined) if (g.memory == false) f = false;
+  document.getElementById('show_memory').checked = f;
+  toggle("memory",f);
+  var m = f;
+
+  f = true;
+  if (g.registers != undefined) if (g.registers == false) f = false;
+  document.getElementById('show_registers').checked = f;
+  toggle("registers",f);
+  var r = f;
+
+  f = g.history || false;
+  document.getElementById('show_history').checked = f;
+  document.getElementById('update_history').checked = f|m|r;
+  toggle("registers_history",f&(!m|r));
+  toggle("memory_history",f&(!r|m));
+
+  document.getElementById('update_limit').value = variety.getQuant();
+  initMenus();
+  toggleVisualizers();
+}
+
+function addGradient() {
+  var startColor = "#" + document.getElementById('startcolor').value;
+  var finalColor = "#" + document.getElementById('finishcolor').value;
+  var startPoint = parseInt(document.getElementById('startpoint').value);
+  var finalPoint = parseInt(document.getElementById('finishpoint').value);
+  if (startPoint > finalPoint) {
+    var t = finalPoint; finalPoint = startPoint; startPoint = t;
+    t = finalColor; finalColor = startColor; startColor = t;
+  }
+  gradientor.addGradient(startColor, finalColor, startPoint, finalPoint);
+  updateVisualizers();
+}
+
+function IFrameDoc(iFrame)
+{
+   var doc = null;
+   if (iFrame.contentDocument) { // For NS6
+     doc = iFrame.contentDocument; 
+   } else if (iFrame.contentWindow) {
+  	if (iFrame.contentWindow.document) { // For IE5.5 and IE6
+	     doc = iFrame.contentWindow.document;
+	}
+	else {
+	     doc = iFrame.contentWindow;
+	}
+   } else if (iFrame.document) { // For IE5
+     doc = iFrame.document;
+   } else {
+     alert("Error: could not find sumiFrame document");
+     return null;
+   }
+   return doc;
+}
+
+function loadJSON(path, success, error)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                if (success)
+                    success(JSON.parse(xhr.responseText));
+            } else {
+                if (error)
+                    error(xhr);
+            }
+        }
+    };
+    try {
+    	xhr.open("GET", path, true);
+	xhr.send();
+    }
+    catch(err) {
+        var file = document.getElementById('file');
+	file.onload = function() {if (IFrameDoc(file).body) success(JSON.parse(IFrameDoc(file).body.innerHTML.replace("<pre>","").replace("</pre>","").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&amp;/g,"&"))); else if (error) error(xhr);};
+	file.src = path;
+    }
+}
+
+function loadMemoryState() {
+  var stateString = document.getElementById('memory_values').value;
+  var state = stateString.split(/[ \n]+/g);
+  var from_address = document.getElementById('from_address').value;
+  var to_address = document.getElementById('to_address').value;
+  if (!isNaN(from_address)) {
+    from_address = parseInt(from_address);
+    if (!isNaN(to_address)) if (parseInt(to_address) != from_address+state.length) alert("to address changed");
+    document.getElementById('to_address').value = to_address = from_address+state.length;
+    variety.inject({state: {memory: state, from: from_address, to: to_address}});
+  }
+}
+
+function loadRegistersState() {
+  var stateString = document.getElementById('registers_values').value;
+  var state = stateString.split(/[ \n]+/g);
+  var from_register = document.getElementById('from_register').value;
+  var to_register = document.getElementById('to_register').value;
+  if (!isNaN(from_register)) {
+    from_register = parseInt(from_register);
+    if (!isNaN(to_register)) if (parseInt(to_register) != from_register+state.length) alert("to regiser changed");
+    document.getElementById('to_register').value = to_register = from_register+state.length;
+    variety.getProcessor(processorID).inject({state: {registers: state, from: from_register, to: to_register}});
+  }
+}
+
+function loadOperations() {
+  pause();
+  var json = document.getElementById('operations').value;
+  if (!json) return;
+  try {
+    var jsonObject = JSON.parse(json);
+    jsonObject.callback = (function(f) {if (f==undefined) { if (document.getElementById('hardware_update').checked) updateVisualizers(); } else if (document.getElementById('software_update').checked) { updateVisualizers(); f = 0; }; if (!document.getElementById('repeat').checked) pause(); return f; });
+    variety = VirtualMachine.fromJSON(jsonObject);
+
+    f = false;
+    if (jsonObject.core) if (jsonObject.core.resume) f = true;
+    toggle("pause",f);
+    toggle("resume",!f);
+
+    document.getElementById('update_limit').value = variety.getQuant();
+  } catch (e) {
+    alert(e.message || e.description);
+  }
+}
+
+function parseURLParameters(url) {
+  var r = /[?&]([^=#]+)=([^&#]*)/g, p = {}, m;
+  while(m = r.exec(url)) p[m[1]] = m[2];
+  return p;
+}
+
+function pause() { toggle('resume',true); toggle('pause',false); variety.stop(); }
+
+function resume() {
+  pause(); toggle('resume',false); toggle('pause',true);
+  variety.step(document.getElementById('update_limit').value);
+}
+
+function removeOperation() {
+  var name = document.getElementById('operation_name').value;
+  variety.getProcessor(processorID).removeOperation(name, operation);
+  document.getElementById('operation_name').value = "";
+  document.getElementById('operation').value = "";
+}
+
+function saveOperations() {
+  document.getElementById('operations').value = formatJson(JSON.stringify(variety.project({state:{volume:{},ports:{}},core:{quant:{},processor:[{state:{volume:{}},core:{interface:{},implementation:{},constructors:{}}}]}})));
+}
+
+function swapOperations() {
+  var nameOne = document.getElementById('operation_name').value;
+  var nameTwo = document.getElementById('operation_swap').value;
+  variety.getProcessor(processorID).swapOperations(nameOne, nameTwo);
+}
+
+function updateOperation() {
+  var constructor = (document.getElementById('constructor').style.display == "");
+  variety.getProcessor(processorID).updateOperation(document.getElementById('operation_name').value, document.getElementById('operation').value, constructor);
+}
+
+function updateVisualizers() {
+  memoryVisualizer.update({ array: variety.getManager().memory });
+  registersVisualizer.update({ array: variety.getProcessor(processorID).registers });
+  if (document.getElementById('update_history').checked) {
+    memoryHistoryVisualizer.update({ array: variety.getManager().memory });
+    registersHistoryVisualizer.update({ array: variety.getProcessor(processorID).registers });
+  }
+//  statsVisualizer.update({});
+}
+
+function saveMemoryState() {
+  var from_address = document.getElementById('from_address').value;
+  var to_address = document.getElementById('to_address').value;
+  if (!isNaN(from_address) && !isNaN(to_address)) {
+    from_address = parseInt(from_address);
+    to_address = parseInt(to_address);
+    document.getElementById('memory_values').value = (variety.project({state: {memory: {}, from: from_address, to: to_address}})).state.memory.join(" ");
+  }
+}
+
+function saveRegistersState() {
+  var from_register = document.getElementById('from_register').value;
+  var to_register = document.getElementById('to_register').value;
+  if (!isNaN(from_register) && !isNaN(to_register)) {
+    from_register = parseInt(from_register);
+    to_register = parseInt(to_register);
+    document.getElementById('registers_values').value = (variety.getProcessor(processorID).project({state: {registers: {}, from: from_register, to: to_register}})).state.registers.join(" ");
+  }
+}
+
+function toggle(div, flag) {
+  if (arguments.length == 1) {
+    if (document.getElementById(div).style.display != "none") 
+      document.getElementById(div).style.display = "none";
+    else 
+      document.getElementById(div).style.display = "";
+  }
+  else document.getElementById(div).style.display = flag?"":"none";
+}
+
+function toggleVisualizers() {
+  var f = document.getElementById('show_control').checked;
+  if (f && (document.getElementById('memory').style.display != 'none')) animator.awake(memoryVisualizer); else animator.sleep(memoryVisualizer);
+  if (f && (document.getElementById('registers').style.display != 'none')) animator.awake(registersVisualizer); else animator.sleep(registersVisualizer)
+  if (f && (document.getElementById('memory_history').style.display != 'none')) animator.awake(memoryHistoryVisualizer); else animator.sleep(memoryHistoryVisualizer);
+  if (f && (document.getElementById('registers_history').style.display != 'none')) animator.awake(registersHistoryVisualizer); else animator.sleep(registersHistoryVisualizer);
+}
+
+//TODO move to tiny js
+function makeVisualizerMenu(context, menu, actions) {
+  var items = menu.children();
+  for(var i = 0; i < items.length; i++) {
+    (function(index) {
+      items[index].click(actions[index]);
+    })(i);
+  }
+  context.activateMenu(menu);
+}
+function makeVisualizerActions(context, parameters) {
+  var actions = [];
+  for(var i = 0; i < parameters.classes.length; i++) {
+    (function(index) {
+      actions.push(function() {
+        try {
+          //TODO move to ThreeVP3
+          //var testOptions = parameters.visualizer.project();
+          //var testVisualizer = new parameters.classes[index](testOptions);
+          //testVisualizer.kill();
+          parameters.visualizer.mutate(parameters.classes[index]);
+        }
+        catch(exception) {
+          alert(exception);
+        }
+      });
+    })(i);
+  }
+  actions.push(function(){
+    var canvas = context.children[0];
+    var src = canvas.toDataURL(); 
+    var w = window.open('about:blank','','height='+canvas.height+',width='+canvas.width+','+'menubar=no,toolbar=no,status=no,directories=no,location=no');
+    w.document.write("<html><head><title>Variety Virtual Machine image</title><style type='text/css'>body {size: auto;margin: 1;}</style></head><body><img src=" + src + "></img></body>");
+  });
+  return actions;
+}
+
+function initMenus() {
+//  var memory = document.getElementById('memory');
+//  var registers = document.getElementById('registers');
+//  var memory_history = document.getElementById('memory_history');
+//  var registers_history = document.getElementById('registers_history');
+  makeVisualizerMenu(_(memory), _(memory_menu), makeVisualizerActions(memory,{
+    visualizer: memoryVisualizer,
+    classes: [
+      ThreeVP3.CanvasArrayVisualizer, 
+      ThreeVP3.CanvasThreeArrayVisualizer, 
+      ThreeVP3.WebGLThreeArrayVisualizer
+    ]
+  }));
+
+  makeVisualizerMenu(_(registers), _(registers_menu), makeVisualizerActions(registers,{
+    visualizer: registersVisualizer,
+    classes: [
+      ThreeVP3.CanvasArrayVisualizer, 
+      ThreeVP3.CanvasThreeArrayVisualizer, 
+      ThreeVP3.WebGLThreeArrayVisualizer
+    ]
+  }));
+
+  makeVisualizerMenu(_(memory_history), _(memory_history_menu), makeVisualizerActions(memory_history,{
+    visualizer: memoryHistoryVisualizer,
+    classes: [
+      ThreeVP3.CanvasArrayHistoryVisualizer, 
+      ThreeVP3.WebGLThreeArrayHistoryVisualizer
+    ]
+  }));
+
+  makeVisualizerMenu(_(registers_history), _(registers_history_menu), makeVisualizerActions(registers_history,{
+    visualizer: registersHistoryVisualizer,
+    classes: [
+      ThreeVP3.CanvasArrayHistoryVisualizer, 
+      ThreeVP3.WebGLThreeArrayHistoryVisualizer
+    ]
+  }));
+}
+    </script>
+  </head>
+  <body>
+    <div id="general">
+      <div id="stats"></div>
+      <div id="viewport"></div>
+      <div id="show">
+        <div id="show_controls">
+          <input type="submit" id="resume" class="button" onclick="resume();" value="Resume"/>
+          <input type="submit" id="pause" class="button" onclick="pause();" value="Pause"/>
+          <input type="checkbox" id="repeat" class="checkbox"/><label for="repeat">Repeat</label>
+        </div>
+        <div id="show_modes">
+          <input type="checkbox" id="update_history" class="checkbox"/><label for="update_history">Update history</label>
+          <input type="checkbox" id="software_update" class="checkbox"/><label for="software_update">Software update</label>
+          <input type="checkbox" id="hardware_update" class="checkbox"/><label for="hardware_update">Hardware update</label>
+          <input type="number" id="update_limit" name="limit" min="1" value="6000" onkeyup="if (document.getElementById('pause').style.display=='') {pause(); resume();}"/>
+          <input type="checkbox" id="show_history" class="checkbox" onchange="var sm=document.getElementById('show_memory').checked; var sr=document.getElementById('show_registers').checked; if (sm || !sr) toggle('memory_history', this.checked); if (sr || !sm) toggle('registers_history', this.checked);toggleVisualizers();"/><label for="show_history">Show history</label>
+          <input type="checkbox" id="show_memory" class="checkbox" onchange="toggle('memory', this.checked); if (document.getElementById('show_history').checked && document.getElementById('registers_history').style.display != 'none') toggle('memory_history', this.checked);toggleVisualizers();"/><label for="show_memory">Show memory</label>
+          <input type="checkbox" id="show_registers" class="checkbox" onchange="toggle('registers', this.checked); if (document.getElementById('show_history').checked && document.getElementById('memory_history').style.display != 'none') toggle('registers_history', this.checked);toggleVisualizers();"/><label for="show_registers">Show registers</label>
+        </div>
+        <div id="show_canvas">
+          <table id="canvas_table" align="center">
+            <tr>
+              <td>
+                <div id="registers" width="200px" height="32px"></div>
+              </td>
+              <td>
+                <div id="memory" width="700px" height="32px"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div id="registers_history" width="200px" height="1px"></div>
+              </td>
+              <td>
+                <div id="memory_history" width="700px" height="1px"></div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="gradient">
+          <input type="number" id="startpoint" value="0"/>
+          <input class="color" id="startcolor" value="000000"/>
+          <input type="submit" id="color" class="button" value="Add gradient" onclick="addGradient();"/>
+          <input class="color" id="finishcolor" value="FFFFFF"/>
+          <input type="number" id="finishpoint" value="4294967295"/>
+        </div>
+      </div>
+      <div id="virtual_machine">
+        <br id="machine_state"/><br id="command_set"/>
+        <a href="#machine_state">Machine state</a>
+        <a href="#command_set">Instruction set</a>
+        <div id="states">
+          <div id="memory_states">
+            <textarea id="memory_values" rows="10"></textarea><br>
+            <input type="submit" id="save_memory" class="button" onclick="saveMemoryState();" value="Save"/>
+            <input type="submit" id="load_memory" class="button" onclick="loadMemoryState(); updateVisualizers();" value="Load"/> from address: <input type="number" id="from_address" name="address" min="0" value="0"/>
+            to address: <input type="number" id="to_address" name="address" min="0" value="0"/>
+          </div>
+          <div id="register_states">
+            <textarea id="registers_values" rows="10"></textarea><br>
+            <input type="submit" id="save_registers" class="button" onclick="saveRegistersState();" value="Save"/> 
+            <input type="submit" id="load_registers" class="button" onclick="loadRegistersState(); updateVisualizers();" value="Load"/> from register: <input type="number" id="from_register" name="address" min="0" value="0"/>
+            to register: <input type="number" id="to_register" name="address" min="0" value="0"/>
+          </div>
+        </div>
+        <div id="set">
+          <div id="implementation">
+            <input type="submit" id="constructor" class="button" onclick="toggle('constructor'); toggle('instruction');" value="Constructor"/><input type="submit" id="instruction" class="button" onclick="toggle('constructor'); toggle('instruction');" value="Instruction"/>:<input id="operation_name"/>
+            <input type="submit" id="submit" class="button" onclick="updateOperation();" value="Submit"/>
+            <textarea id="operation" rows="10"></textarea><br>
+            <input type="submit" id="swap" class="button" onclick="swapOperations();" value="Swap"/> with: <input id="operation_swap"/>
+            <input type="submit" id="remove" class="button" onclick="removeOperation();" value="Remove"/><br>
+          </div>
+          <div id="instruction_set">
+            <textarea id="operations" rows="10"></textarea><br>
+            <input type="submit" id="save" class="button" onclick="saveOperations();" value="Save"/>
+            <input type="submit" id="load" class="button" onclick="loadOperations();" value="Load"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p id="about">
+      Author - Valerian Ivashenko (shaver).<br>
+      Developer - Anatoly Belchikov (blackmoon).
+    </p>
+    <p id="ground">
+      <input type="checkbox" id="show_control" class="checkbox" onchange="toggle('show',this.checked);toggle('virtual_machine',this.checked);toggle('about',this.checked);toggleVisualizers();"/><label for="show_control" id="show_control_label">Show control</label>
+    </p>
+
+    <div id="memory_menu" class="menu">
+      <div class="option">Canvas renderer</div>
+      <div class="option">Canvas Three.js renderer</div>
+      <div class="option">WebGL Three.js renderer</div>
+      <div class="option">Browse as image</div>
+    </div>
+
+    <div id="registers_menu" class="menu">
+      <div class="option">Canvas renderer</div>
+      <div class="option">Canvas Three.js renderer</div>
+      <div class="option">WebGL Three.js renderer</div>
+      <div class="option">Browse as image</div>
+    </div>
+
+    <div id="memory_history_menu" class="menu">
+      <div class="option">Canvas renderer</div>
+      <div class="option">WebGL Three.js renderer</div>
+      <div class="option">Browse as image</div>
+    </div>
+
+    <div id="registers_history_menu" class="menu">
+      <div class="option">Canvas renderer</div>
+      <div class="option">WebGL Three.js renderer</div>
+      <div class="option">Browse as image</div>
+    </div>
+
+    <div id="viewport_menu" class="menu">
+      <div class="option">Canvas renderer</div>
+      <div class="option">WebGL renderer</div>
+    </div>
+
+    <iframe id="file" style="display:none"></iframe>
+  </body>
+</html>

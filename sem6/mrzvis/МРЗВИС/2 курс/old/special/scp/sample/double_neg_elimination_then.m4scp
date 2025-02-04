@@ -1,0 +1,28 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+//    Location: /lib/test/double_neg_elimination_then
+])
+
+procedure(test_double_neg_elimination_then,
+M4SCS(	[[
+		enter_message = /"test_double_neg_elimination_then: entering\n"/,
+		leave_message = /"test_double_neg_elimination_then: leaving\n"/
+	]]),
+	[{
+		state, true, stack, parameters, logging
+	}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: stack, 
+		4_: in_: parameters,
+		5_: in_: logging
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

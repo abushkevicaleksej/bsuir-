@@ -1,0 +1,4 @@
+http://scnedu.sf.net/variety/_/index.html?variety=alterface.json&gradient=interscreen.json
+http://scnedu.sf.net/variety/_/index.html?variety=examinator.PSMIS.E.1.json&gradient=tester.json
+http://scnedu.sf.net/variety/_/index.html?variety=examinator.PSMIS.E.41.json&gradient=tester.json
+http://scnedu.sf.net/variety/_/index.html?variety=examinator.PSMIS.E.81.json&gradient=tester.json

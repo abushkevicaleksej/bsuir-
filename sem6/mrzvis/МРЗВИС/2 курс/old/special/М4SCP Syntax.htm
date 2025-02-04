@@ -1,0 +1,1085 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Краткое руководство по программированию на языке SCP в формате m4scp.</title>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=active.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{color:black;
+	mso-text-animation:none;
+	font-weight:bold;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;
+	vertical-align:super;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="16386"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=gray vlink=black style='tab-interval:35.4pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<h1 align=center style='text-align:center'><span style='font-size:11.0pt;
+font-weight:normal;mso-bidi-font-weight:bold'>Синтаксис <a href="#a0">содержимого
+файлов формата <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4<span
+lang=EN-US style='mso-ansi-language:EN-US'>scp</span></a>.<o:p></o:p></span></h1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a0>содержимое
+  файла m4</a><span style='mso-bookmark:a0'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>scp</span></span><b><span style='color:red'>&gt;</span></b> <b><span
+  style='color:red'>::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>[&lt;</span></b><a href="#a1">пары
+  синонимов</a><b><span style='color:red'>&gt;]</span></b> <b><span
+  style='color:red'>[&lt;</span></b><a href="#a3">включения</a><b><span
+  style='color:red'>&gt;]</span></b> <b><span style='color:red'>(&lt;</span></b><a
+  href="#a5">программа на <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4<span
+  lang=EN-US style='mso-ansi-language:EN-US'>scp</span></a><b><span
+  style='color:red'>&gt; |<br>
+  &nbsp;&lt;</span></b><a href="#a6">процедура на <span lang=EN-US
+  style='mso-ansi-language:EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:
+  EN-US'>scp</span></a><b><span style='color:red'>&gt;) {&lt;</span></b><a
+  href="#a6">процедура на <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4<span
+  lang=EN-US style='mso-ansi-language:EN-US'>scp</span></a><b><span
+  style='color:red'>&gt;}</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a1>пары
+  синонимов</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a2">пара
+  синонимов</a><b><span style='color:red'>&gt;{ &lt;</span></b><a href="#a2">пара
+  синонимов</a><b><span style='color:red'>&gt;}</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a2>пара
+  синонимов</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a35">идентификатор</a><b><span
+  style='color:red'>&gt;</span></b> = <b><span style='color:red'>&lt;</span></b><a
+  href="#a35">идентификатор</a><b><span style='color:red'>&gt;</span></b>;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a3>включения</a><b><span
+  style='color:red'>&gt;</span></b> <b><span style='color:red'>::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a4">включение</a><b><span
+  style='color:red'>&gt;</span></b> <b><span style='color:red'>{&lt;</span></b><a
+  href="#a4">включение</a><b><span style='color:red'>&gt;}</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a4>включение</a><b><span
+  style='color:red'>&gt;</span></b> <b><span style='color:red'>::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>#<span lang=EN-US style='mso-ansi-language:EN-US'>include</span>
+  &quot;<b><span style='color:red'>&lt;</span></b>имя файла<b><span
+  style='color:red'>&gt;</span></b>&quot;</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a5>программа
+  на </a><span style='mso-bookmark:a5'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4</span><span style='mso-bookmark:a5'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>scp</span></span><b><span style='color:red'>&gt;
+  ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a7">заголовок
+  программы</a><b><span style='color:red'>&gt;</span></b> <b><span
+  style='color:red'>[&lt;</span></b><a href="#a24">операторы</a><b><span
+  style='color:red'>&gt;]</span></b> <b><span style='color:red'>&lt;</span></b><a
+  href="#a21">окончание</a><b><span style='color:red'>&gt;</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a6>процедура
+  на </a><span style='mso-bookmark:a6'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4</span><span style='mso-bookmark:a6'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>scp</span></span><b><span style='color:red'>&gt;
+  ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a8">заголовок
+  процедуры</a><b><span style='color:red'>&gt;</span></b> <b><span
+  style='color:red'>[&lt;</span></b><a href="#a24">операторы</a><b><span
+  style='color:red'>&gt;]</span></b> <b><span style='color:red'>&lt;</span></b><a
+  href="#a21">окончание</a><b><span style='color:red'>&gt;</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a7>заголовок
+  программы</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>program</span>(<b><span
+  style='color:red'>&lt;</span></b><a href="#a9">имя программы</a><b><span
+  style='color:red'>&gt;[</span></b>, <b><span style='color:red'>[</span></b>[<b><span
+  style='color:red'>&lt;</span></b><a href="#a11">множество констант</a><b><span
+  style='color:red'>&gt;</span></b>]<b><span style='color:red'>][</span></b>, [<b><span
+  style='color:red'>&lt;</span></b><a href="#a12">множество переменных</a><b><span
+  style='color:red'>&gt;</span></b>]<b><span style='color:red'>]]</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a8>заголовок
+  процедуры</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>procedure</span>(<b><span
+  style='color:red'>&lt;</span></b><a href="#a10">имя процедуры</a><b><span
+  style='color:red'>&gt;[</span></b>, <b><span style='color:red'>[</span></b>[<b><span
+  style='color:red'>&lt;</span></b><a href="#a11">множество констант</a><b><span
+  style='color:red'>&gt;</span></b>]<b><span style='color:red'>][</span></b>, <b><span
+  style='color:red'>[</span></b>[<b><span style='color:red'>&lt;</span></b><a
+  href="#a12">множество переменных</a><b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>][</span></b>, [<b><span style='color:red'>&lt;</span></b><a
+  href="#a13">формальные параметры</a><b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>]]]</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a9>имя
+  программы</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a35">идентификатор</a><b><span
+  style='color:red'>&gt;</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a10>имя
+  процедуры</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a35">идентификатор</a><b><span
+  style='color:red'>&gt;</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a11>множество
+  констант</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a14">система
+  множеств</a><b><span style='color:red'>&gt;</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a12>множество
+  переменных</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a15">множество</a><b><span
+  style='color:red'>&gt;</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a13>формальные
+  параметры</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a17">связка
+  параметров</a><b><span style='color:red'>&gt;</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a14>система
+  множеств</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>[<b><span style='color:red'>{&lt;</span></b><a href="#a16">идентификаторы</a><b><span
+  style='color:red'>&gt;[</span></b>;<b><span style='color:red'>]}</span></b>]</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a15>множество</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>{<b><span style='color:red'>&lt;</span></b><a href="#a16">идентификаторы</a><b><span
+  style='color:red'>&gt;</span></b>}</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a16>идентификаторы</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a35">идентификатор</a><b><span
+  style='color:red'>&gt;</span></b><span style='display:none;mso-hide:all'>&nbsp;</span><b><span
+  style='color:red'>[</span></b><span style='display:none;mso-hide:all'>&nbsp;</span>,
+  <b><span style='color:red'>&lt;</span></b><a href="#a35">идентификатор</a><span
+  style='display:none;mso-hide:all'>&nbsp;</span><b><span style='color:red'>&gt;</span></b><span
+  style='display:none;mso-hide:all'>&nbsp;</span><b><span style='color:red'>]</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a17>связка
+  параметров</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>{<b><span style='color:red'>&lt;</span></b><a href="#a18">числовой
+  атрибут</a><b><span style='color:red'>&gt;</span></b>: <b><span
+  style='color:red'>[</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>in</span>_:<b><span
+  style='color:red'>]</span></b> <b><span style='color:red'>[</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>out</span>_:<b><span
+  style='color:red'>]</span></b> <b><span style='color:red'>&lt;</span></b><a
+  href="#a35">идентификатор</a><b><span style='color:red'>&gt;<br>
+  {</span></b>, <b><span style='color:red'>&lt;</span></b><a href="#a18">числовой
+  атрибут</a><span style='display:none;mso-hide:all'>&nbsp;</span><b><span
+  style='color:red'>&gt;</span></b>: <b><span style='color:red'>[</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>in</span>_:<b><span
+  style='color:red'>]</span></b> <b><span style='color:red'>[</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>out</span>_:<b><span
+  style='color:red'>]</span></b> <b><span style='color:red'>&lt;</span></b><a
+  href="#a35">идентификатор</a><b><span style='color:red'>&gt;</span></b><span
+  style='display:none;mso-hide:all'>&nbsp;</span><b><span style='color:red'>}</span></b><span
+  style='display:none;mso-hide:all'>&nbsp;</span>} </p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a18>числовой
+  атрибут</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a19">натуральное
+  число</a><b><span style='color:red'>&gt;</span></b>_</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a19>натуральное
+  число</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b>1<b><span
+  style='color:red'>|</span></b>2<b><span style='color:red'>|</span></b>3<b><span
+  style='color:red'>|</span></b>4<b><span style='color:red'>|</span></b>5<b><span
+  style='color:red'>|</span></b>6<b><span style='color:red'>|</span></b>7<b><span
+  style='color:red'>|</span></b>8<b><span style='color:red'>|</span></b>9<b><span
+  style='color:red'>){&lt;</span></b><a href="#a20">цифра</a><b><span
+  style='color:red'>&gt;}</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a20>цифра</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>1<b><span style='color:red'>|</span></b>2<b><span
+  style='color:red'>|</span></b>3<b><span style='color:red'>|</span></b>4<b><span
+  style='color:red'>|</span></b>5<b><span style='color:red'>|</span></b>6<b><span
+  style='color:red'>|</span></b>7<b><span style='color:red'>|</span></b>8<b><span
+  style='color:red'>|</span></b>9<b><span style='color:red'>|</span></b>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a21>окончание</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>[&lt;</span></b><a href="#a22">метка</a><b><span
+  style='color:red'>&gt;] </span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'><a href="Call%20Sample.htm#return">return</a></span><b><span
+  style='color:red'>[</span></b>()<b><span style='color:red'>]</span></b> <span
+  lang=EN-US style='mso-ansi-language:EN-US'><a href="Call%20Sample.htm#end">end</a></span><b><span
+  style='color:red'>[</span></b>()<b><span style='color:red'>]</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a22>метка</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Condition%20Sample.htm#label">label</a></span>(<b><span
+  style='color:red'>&lt;</span></b><a href="#a35">идентификатор</a><b><span
+  style='color:red'>&gt;</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a23>ловушка</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Handling%20Sample.htm#catch">catch</a></span>(<b><span
+  style='color:red'>&lt;</span></b><a href="#a35">идентификатор</a><b><span
+  style='color:red'>&gt;</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:24'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a24>операторы</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a href="#a25">оператор</a><b><span
+  style='color:red'>&gt;{&lt;</span></b><a href="#a25">оператор</a><b><span
+  style='color:red'>&gt;}</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:25'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a25>оператор</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>[&lt;</span></b><a href="#a22">метка</a><b><span
+  style='color:red'>&gt;] [&lt;</span></b><span lang=BE style='mso-ansi-language:
+  BE'><a href="#a23">ловушка</a></span><b><span style='color:red'>&gt;]<br>
+  (&lt;</span></b><a href="#a26">оператор с одним операндом</a><b><span
+  style='color:red'>&gt;|<br>
+  &lt;</span></b><a href="#a27">оператор с двумя операндами</a><b><span
+  style='color:red'>&gt;|<br>
+  &lt;</span></b><a href="#a28">оператор c<span lang=EN-US style='mso-ansi-language:
+  EN-US'>allReturn</span></a><b><span style='color:red'>&gt;|<br>
+  &lt;</span></b><a href="#a29">оператор с тремя операндами</a><b><span
+  style='color:red'>&gt;|<br>
+  &lt;</span></b><a href="#a30">оператор вида <span lang=EN-US
+  style='mso-ansi-language:EN-US'>ElStr</span>5</a><b><span style='color:red'>&gt;|<br>
+  &lt;</span></b><a href="#a31">оператор вида <span lang=EN-US
+  style='mso-ansi-language:EN-US'>SetStr</span>3</a><b><span style='color:red'>&gt;|<br>
+  &lt;</span></b><a href="#a32">оператор вида <span lang=EN-US
+  style='mso-ansi-language:EN-US'>SetStr</span>5</a><b><span style='color:red'>&gt;)</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:26'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a26>оператор
+  с одним операндом</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>sys</span>_<span lang=EN-US style='mso-ansi-language:
+  EN-US'>get</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>autosegment</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sys</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>get</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>default</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>segment</span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sys</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>set</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>default</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>segment</span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sys</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>open</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>dir</span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sys</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>open</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>segment</span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sys</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>close</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>segment</span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sys</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>unlink</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Gen%20Sample.htm#genEl">genEl</a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="HW%20Sample.htm#print">print</a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="HW%20Sample.htm#printNl">printNl</a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Gen%20Sample.htm#printEl">printEl</a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Erase%20Sample.htm#eraseEl">eraseEl</a></span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Condition%20Sample.htm">ifType</a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Condition%20Sample.htm#varErase">varErase</a></span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>contErase</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Call%20Sample.htm#waitReturn">waitReturn</a></span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Condition%20Sample.htm#ifVarAssign">ifVarAssign</a></span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>ifFormCont</span><b><span
+  style='color:red'>)<br>
+  </span></b>([<b><span style='color:red'>[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_1_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>1_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>[&lt;</span></b><a href="#a33">переходы</a><b><span
+  style='color:red'>&gt;]</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:27'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a27>оператор
+  с двумя операндами</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>sys</span>_<span lang=EN-US style='mso-ansi-language:
+  EN-US'>get</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>location</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sys</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>spin</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>segment</span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sys</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>wait</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Condition%20Sample.htm#varAssign">varAssign</a></span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Condition%20Sample.htm#ifCoin">ifCoin</a></span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>ifEq</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>ifGr</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>ifGrEq</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>contAssign</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>idtfAssign</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>idtfMove</span><b><span
+  style='color:red'>)<br>
+  </span></b>([<b><span style='color:red'>[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_1_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>1_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>, <br>
+  <b><span style='color:red'>[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_2_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]</span></b><br>
+  2_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>[&lt;</span></b><a href="#a33">переходы</a><b><span
+  style='color:red'>&gt;]</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:28'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a28>оператор
+  </a><span style='mso-bookmark:a28'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>callReturn</span></span><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Call%20Sample.htm#callReturn">callReturn</a></span>([1_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>, <br>
+  2_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>], <b><span
+  style='color:red'>&lt;</span></b>идентификатор<b><span style='color:red'>&gt;</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:29'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a29>оператор
+  с тремя операндами</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>sys</span>_<span lang=EN-US style='mso-ansi-language:
+  EN-US'>set</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>event</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>handler</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Call%20Sample.htm#call">call</a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>add</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>sub</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>div</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>pow</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>mult</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Gen%20Sample.htm#genElStr3">genElStr<span lang=RU style='mso-ansi-language:
+  RU'>3</span></a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Erase%20Sample.htm#eraseElStr3">eraseElStr<span lang=RU
+  style='mso-ansi-language:RU'>3</span></a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Search%20Sample.htm#searchElStr3">searchElStr<span lang=RU
+  style='mso-ansi-language:RU'>3</span></a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Erase%20Sample.htm#eraseSetStr3">eraseSetStr<span lang=RU
+  style='mso-ansi-language:RU'>3</span></a></span><b><span style='color:red'>)<br>
+  </span></b>([<b><span style='color:red'>[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_1_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>1_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>, <br>
+  <b><span style='color:red'>[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_2_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>2_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>, <br>
+  <b><span style='color:red'>[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_3_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>3_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>[&lt;</span></b><a href="#a33">переходы</a><b><span
+  style='color:red'>&gt;]</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:30'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a30>оператор
+  вида </a><span style='mso-bookmark:a30'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>ElStr</span>5</span><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><a href="Gen%20Sample.htm#genElStr5">genElStr<span
+  lang=RU style='mso-ansi-language:RU'>5</span></a></span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Erase%20Sample.htm#searchElStr5">searchElStr<span lang=RU
+  style='mso-ansi-language:RU'>5</span></a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Erase%20Sample.htm#eraseElStr5">eraseElStr<span lang=RU
+  style='mso-ansi-language:RU'>5</span></a></span><b><span style='color:red'>)<br>
+  </span></b>([<b><span style='color:red'>[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_1_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>1_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>, <br>
+  <b><span style='color:red'>[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_2_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>2_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>, <br>
+  <b><span style='color:red'>[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_3_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>3_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>,<br>
+  <b><span style='color:red'>[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_4_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>4_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>,<br>
+  <b><span style='color:red'>[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_5_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b>5_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>[&lt;</span></b><a href="#a33">переходы</a><b><span
+  style='color:red'>&gt;]</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:31'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a31>оператор
+  вида </a><span style='mso-bookmark:a31'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>SetStr</span>3</span><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><a href="Cycle%20Sample.htm#searchSetStr3">searchSetStr<span
+  lang=RU style='mso-ansi-language:RU'>3</span></a></span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Select%20Sample.htm">selectYStr<span lang=RU style='mso-ansi-language:
+  RU'>3</span></a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Select%20Sample.htm#selectNStr3">selectNStr<span lang=RU
+  style='mso-ansi-language:RU'>3</span></a></span><b><span style='color:red'>)<br>
+  </span></b>([<b><span style='color:red'>[[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>set</span>1_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>set</span>1_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  [</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>segc</span>_1_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b>1_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>,</p>
+  <p class=MsoNormal><b><span style='color:red'>[[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>set</span>2_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>set</span>2_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  [</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>segc</span>_2_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b>2_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>, <br>
+  <b><span style='color:red'>[[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_<span lang=EN-US style='mso-ansi-language:EN-US'>set</span>3_:
+  <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>set</span>3_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  [</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>segc</span>_3_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b>3_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>[&lt;</span></b><a href="#a33">переходы</a><b><span
+  style='color:red'>&gt;]</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:32'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a32>оператор
+  вида </a><span style='mso-bookmark:a32'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>SetStr</span>5</span><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>searchSetStr</span>5<b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Select%20Sample.htm#selectYStr5">selectYStr<span lang=RU
+  style='mso-ansi-language:RU'>5</span></a></span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><a
+  href="Select%20Sample.htm">selectNStr<span lang=RU style='mso-ansi-language:
+  RU'>5</span></a></span><b><span style='color:red'>)<br>
+  </span></b>([<b><span style='color:red'>[[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>set</span>1_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>set</span>1_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  [</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>segc</span>_1_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b>1_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>,</p>
+  <p class=MsoNormal><b><span style='color:red'>[[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>set</span>2_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>set</span>2_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  [</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>segc</span>_2_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b>2_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>, <br>
+  <b><span style='color:red'>[[</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>segc</span>_set3_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>set</span>3_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  [</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>segc</span>_3_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b>3_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>,</p>
+  <p class=MsoNormal><b><span style='color:red'>[[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>set</span>4_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>set</span>4_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  [</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>segc</span>_4_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b>4_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>,</p>
+  <p class=MsoNormal><b><span style='color:red'>[[</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>segc</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>set</span>5_: <b><span style='color:red'>&lt;</span></b><a
+  href="#a34">операнд оператора</a><b><span style='color:red'>&gt;</span></b>,<b><span
+  style='color:red'>]<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>set</span>5_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  [</span></b><span lang=EN-US style='mso-ansi-language:EN-US'>segc</span>_5_: <b><span
+  style='color:red'>&lt;</span></b><a href="#a34">операнд оператора</a><b><span
+  style='color:red'>&gt;</span></b>,<b><span style='color:red'>]<br>
+  </span></b>5_: <b><span style='color:red'>&lt;</span></b><a href="#a34">операнд
+  оператора</a><b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>[&lt;</span></b><a href="#a33">переходы</a><b><span
+  style='color:red'>&gt;]</span></b>)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:33'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a33>переходы</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>,<b><span style='color:red'>[&lt;</span></b><a href="#a35">идентификатор</a><b><span
+  style='color:red'>&gt;][</span></b>,<b><span style='color:red'>&lt;</span></b><a
+  href="#a35">идентификатор</a><b><span style='color:red'>&gt;]</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:34'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a34>операнд
+  оператора</a><b><span style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><a href="Gen%20Sample.htm#assign_">assign<span
+  lang=RU style='mso-ansi-language:RU'>_</span></a></span><b><span
+  style='color:red'>|</span></b> <span lang=EN-US style='mso-ansi-language:
+  EN-US'><a href="HW%20Sample.htm#fixed_">fixed<span lang=RU style='mso-ansi-language:
+  RU'>_</span></a></span><b><span style='color:red'>)</span></b>:<b><span
+  style='color:red'>[(</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>const</span>_<b><span style='color:red'>|</span></b> <span lang=EN-US
+  style='mso-ansi-language:EN-US'>var</span>_<b><span style='color:red'>|</span></b>
+  <span lang=EN-US style='mso-ansi-language:EN-US'>meta</span>_<b><span
+  style='color:red'>)</span></b>:<b><span style='color:red'>][(</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>pos</span>_<b><span
+  style='color:red'>|</span></b> <span lang=EN-US style='mso-ansi-language:
+  EN-US'>fuz</span>_<b><span style='color:red'>|</span></b> <span lang=EN-US
+  style='mso-ansi-language:EN-US'>neg</span>_<b><span style='color:red'>)</span></b>:<b><span
+  style='color:red'>][</span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'><a href="Erase%20Sample.htm">f<span style='mso-ansi-language:RU'> </span><span
+  lang=RU style='mso-ansi-language:RU'>_</span></a></span>:<b><span
+  style='color:red'>]<br>
+  (&lt;</span></b><a href="#a35">идентификатор</a><b><span style='color:red'>&gt;|</span></b>
+  [<b><span style='color:red'>&lt;</span></b><a href="#a14">система множеств</a><b><span
+  style='color:red'>&gt;</span></b>]<b><span style='color:red'>|</span></b> [<b><span
+  style='color:red'>&lt;</span></b>связка<b><span style='color:red'>&gt;</span></b>]<b><span
+  style='color:red'>)</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:35'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a35>идентификатор</a><b><span
+  style='color:red'>&gt; ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(&lt;</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>scs</span>-идентификатор<b><span
+  style='color:red'>&gt;</span></b><a name="_ftnref1"></a><a href="#_ftn1"
+  title=""><span style='mso-bookmark:_ftnref1'><span
+  class=MsoFootnoteReference>[1]</span></span></a><b><span style='color:red'>|</span></b>
+  [<b><span style='color:red'>&lt;</span></b><a href="#a36">зарезервированное
+  слово <span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4<span
+  lang=EN-US style='mso-ansi-language:EN-US'>scp</span></a><b><span
+  style='color:red'>&gt;</span></b>]<b><span style='color:red'>)</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:36;mso-yfti-lastrow:yes'>
+  <td width=237 valign=top style='width:177.55pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>&lt;</span></b><a name=a36>зарезервированное
+  слово </a><span style='mso-bookmark:a36'><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4</span><span style='mso-bookmark:a36'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>scp</span></span><b><span style='color:red'>&gt;
+  ::=</span></b></p>
+  </td>
+  <td width=398 valign=top style='width:298.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='color:red'>(</span></b>__<span lang=EN-US
+  style='mso-ansi-language:EN-US'>line</span>__<b><span style='color:red'>|</span></b>
+  __<span lang=EN-US style='mso-ansi-language:EN-US'>file</span>__<b><span
+  style='color:red'>|</span></b> <span lang=EN-US style='mso-ansi-language:
+  EN-US'>builtin</span><b><span style='color:red'>|</span></b> <span
+  lang=EN-US style='mso-ansi-language:EN-US'>end</span><b><span
+  style='color:red'>|</span></b> <span lang=EN-US style='mso-ansi-language:
+  EN-US'>return</span><b><span style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4<span
+  lang=EN-US style='mso-ansi-language:EN-US'>incr</span><b><span
+  style='color:red'>| </span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:EN-US'>ifelse</span><b><span
+  style='color:red'>| </span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:EN-US'>popdef</span><b><span
+  style='color:red'>| </span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:EN-US'>pushdef</span><b><span
+  style='color:red'>| </span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:EN-US'>define</span><b><span
+  style='color:red'>| </span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:EN-US'>undefine</span><b><span
+  style='color:red'>|<br>
+  </span></b><span lang=EN-US style='mso-ansi-language:EN-US'>m</span>4<span
+  lang=EN-US style='mso-ansi-language:EN-US'>include</span><b><span
+  style='color:red'>| </span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:EN-US'>wrap</span><b><span
+  style='color:red'>|</span></b> <span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:EN-US'>exit</span><b><span
+  style='color:red'>| </span></b><span lang=EN-US style='mso-ansi-language:
+  EN-US'>m</span>4<span lang=EN-US style='mso-ansi-language:EN-US'>scp</span>_<span
+  lang=EN-US style='mso-ansi-language:EN-US'>define</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>operator</span><b><span style='color:red'>| </span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>M</span>4<span lang=EN-US
+  style='mso-ansi-language:EN-US'>SCP</span><b><span style='color:red'>&lt;</span></b><a
+  href="#a35">идентификатор</a><b><span style='color:red'>&gt;)</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div>
+
+<div class=MsoNormal style='text-autospace:ideograph-other'><span
+style='font-size:12.0pt'>
+
+<hr size=1 width="33%" align=left>
+
+</span></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a name="_ftn1"></a><a href="#_ftnref1" title=""><span
+style='mso-bookmark:_ftn1'><span class=MsoFootnoteReference>[1]</span></span><span
+style='mso-bookmark:_ftn1'></span></a><span style='mso-bookmark:_ftn1'></span>
+См. <span lang=EN-US style='mso-ansi-language:EN-US'>scs.doc</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

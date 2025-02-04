@@ -1,0 +1,156 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: counter_APA_output.m4scp
+// Description: positive actual output arcs counting
+///////////////////////////////////////////////////////
+//      Author: IVP
+//        Date: 31.07.2013
+//    Location: /lib/set/counter_APA_output
+// Output parameters:	1	-	state
+//			2	-	true
+//			3	-	history
+// Input parameters:	3	-	history = (set, ...)
+//			4	-	parameters = (counter, ...)
+//			5	-	logging
+// Execution input time complexity:	unlimited, logging dependable
+// Execution output time complexity:	logging dependable
+// Execution input space complexity:	unlimited, logging dependable
+// Execution output space complexity:	logging dependable
+])
+
+procedure(set_counter_APA_output,
+M4SCS(	[[
+		enter_message = /"set_counter_APA_output: entering\n"/,
+		leave_message = /"set_counter_APA_output: leaving\n"/,
+		chain_get_next = "/lib/chain/get_next/chain_get_next",
+		chain_push = "/lib/chain/push/chain_push",
+		chain_push_first = "/lib/chain/push_first/chain_push_first",
+		chain_destroy = "/lib/chain/destroy/chain_destroy",
+		iterator_create_APA_output = "/lib/iterator/create_APA_output/iterator_create_APA_output",
+		iterator_embedded_cycle_filter = "/lib/iterator/embedded_cycle_filter/iterator_embedded_cycle_filter",
+		number_incrementor = "/lib/number/incrementor/number_incrementor",
+		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prmA,prmB,
+		prd1,prd2,prd3]])
+M4SEC(	[[	chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+		chain_push = /../chain/push[SYFIX]/chain_push,
+		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+		iterator_create_APA_output = /../iterator/create_APA_output[SYFIX]/iterator_create_APA_output,
+		iterator_embedded_cycle_filter = /../iterator/embedded_cycle_filter[SYFIX]/iterator_embedded_cycle_filter,
+		number_incrementor = /../number/incrementor[SYFIX]/number_incrementor,
+		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8,prm9,prmA,prmB,
+		prd1,prd2,prd3]]), 
+	[{
+		link, outlink1, outlink2,
+		set,counter,arc,singleton,
+		state,true,
+		history,
+		parameters,
+		counter_link,
+		iterator_create,
+		logging, empty,
+		descr}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: history,
+		4_: in_: parameters, 
+		5_: in_: logging
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+genEl([1_: assign_: node_: const_: empty])
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm1 = [{1_: history, 2_: link, 3_: set}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: link],,final)
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm2 = [{1_: parameters, 2_: link, 3_: counter}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: link],,final)
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm3 = [{1_: link, 2_: link, 3_: iterator_create}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: iterator_create],do)
+varAssign([1_: assign_: iterator_create, 2_: fixed_: iterator_create_APA_output])
+label(do)
+M4SCS(
+// iterator_embedded_cycle(	set,
+//				number_incrementor(	counter),
+//				empty,
+//				iterator_create_APA_output)
+//
+)
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm4 = [{1_: iterator_create, 2_: outlink1, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prm5 = [{1_: outlink1, 2_: empty, 3_: outlink1, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+genElStr3([	1_: assign_: node_: const_: singleton,
+		2_: assign_: arc_: pos_: temporary_: actual_: const_: arc,
+		3_: fixed_: counter])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm6 = [{1_: singleton, 2_: outlink2, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prm7 = [{1_: outlink2, 2_: counter_link, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prm8 = [{1_: counter_link, 2_: number_incrementor, 3_: counter_link, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prm9 = [{1_: outlink1, 2_: counter_link, 3_: outlink1, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmA = [{1_: outlink1, 2_: set, 3_: outlink1, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+
+call([1_: fixed_: iterator_embedded_cycle_filter, 2_: fixed_: prmB = [{1_: empty, 2_: empty, 3_: history, 4_: outlink1, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+
+call([	1_: fixed_: chain_destroy,
+	2_: fixed_: prd1 = [{1_: outlink1, 2_: empty}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([	1_: fixed_: chain_destroy,
+	2_: fixed_: prd2 = [{1_: counter_link, 2_: empty}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([	1_: fixed_: chain_destroy,
+	2_: fixed_: prd3 = [{1_: outlink2, 2_: empty}],
+	3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+eraseEl([1_: fixed_: f_: singleton])
+
+label(final)
+
+eraseEl([1_: fixed_: f_: empty])
+
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

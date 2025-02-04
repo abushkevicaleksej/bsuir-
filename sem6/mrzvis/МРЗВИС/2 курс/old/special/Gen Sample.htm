@@ -1,0 +1,510 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<title>Краткое руководство по программированию на языке SCP в формате m4scp.</title>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=active.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.MsoFootnoteReference
+	{color:black;
+	mso-text-animation:none;
+	font-weight:bold;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;
+	vertical-align:super;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="18434"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=gray vlink=black style='tab-interval:35.4pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<p class=MsoFootnoteText style='margin-bottom:12.0pt'><span style='font-family:
+"Courier New";color:green'>/////////////////////////////////////////////////////<br>
+//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Файл: __</span><span lang=EN-US
+style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>file</span><span
+style='font-family:"Courier New";color:green'>__</span><b><span
+style='font-family:"Courier New";color:red'><br>
+</span></b><span style='font-family:"Courier New";color:green'>//&nbsp;<span
+style='mso-spacerun:yes'>   </span>Описание: программа, </span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'>добавляющая
+в исходное<br>
+</span><span style='font-family:"Courier New";color:green'>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+множество </span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>S</span><span lang=EN-US style='font-family:"Courier New";
+color:green'> </span><span style='font-family:"Courier New";color:green'>узел и
+выходящую из него<br>
+//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+в элемент неопределённого типа<br>
+//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+нечёткую позитивную дугу<br>
+//&nbsp; Размещение: /</span><span style='font-family:"Courier New"'><br>
+<span style='color:green'>/////////////////////////////////////////////////////<br>
+//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Автор: ИВП</span><b><span
+style='color:red'><br>
+</span></b><span style='color:green'>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Дата: 9.02.2003</span><b><span style='color:red'><br>
+</span></b><span style='color:green'>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+создано<br>
+<br>
+</span><span style='color:blue'>#</span></span><span lang=EN-US
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'>include</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New";color:red'>&quot;</span><span lang=EN-US style='font-family:"Courier New";
+color:red;mso-ansi-language:EN-US'><a href="scp_keynodes.scsy">scp<span
+lang=RU style='mso-ansi-language:RU'>_</span>keynodes<span lang=RU
+style='mso-ansi-language:RU'>.</span>scsy</a></span><span style='font-family:
+"Courier New";color:red'>&quot;<span style='mso-tab-count:1'> </span><br>
+<br>
+</span><span style='font-family:"Courier New";color:green'>/////////////////////////////////////////////////////<br>
+// текст программ</span><span lang=BE style='font-family:"Courier New";
+color:green;mso-ansi-language:BE'>ы<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>program</span><span style='font-family:"Courier New"'>(</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>gen</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>sample</span><span style='font-family:
+"Courier New"'>,<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-family:"Courier New"'> [[ </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>S</span><span lang=EN-US
+style='font-family:"Courier New"'> </span><span style='font-family:"Courier New"'>=
+{}</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New";color:green'>// здесь объявляем и</span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'>сходное
+множество</span><span style='font-family:"Courier New";color:green'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New"'>]],<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-family:"Courier New"'> [{ </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>e</span><span style='font-family:"Courier New"'>,</span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New";color:green'>// переменная для</span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'> элемента
+непределённого типа</span><span style='font-family:"Courier New"'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>node</span><span
+style='font-family:"Courier New"'>,</span><span lang=EN-US style='font-family:
+"Courier New";color:green;mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New";color:green'>// переменная для</span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'> узла</span><span
+style='font-family:"Courier New"'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>fuzzy</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>arc</span><span style='font-family:"Courier New"'>,</span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New";color:green'>// переменная для</span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'> константной
+нечёткой дуги</span><span style='font-family:"Courier New"'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>positive</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>arc</span><span lang=EN-US
+style='font-family:"Courier New"'> </span><span style='font-family:"Courier New";
+color:green'>// переменная для</span><span lang=BE style='font-family:"Courier New";
+color:green;mso-ansi-language:BE'> константной позитивной дуги</span><span
+style='font-family:"Courier New"'><br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span style='font-family:
+"Courier New"'>}])<br>
+<br>
+<span style='color:green'>/////////////////////////////////////////////////////<br>
+// с помощью оператора </span></span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>genEl</span><span lang=EN-US
+style='font-family:"Courier New";color:green'> </span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'>создаётся
+константный <br>
+</span><span style='font-family:"Courier New";color:green'>// </span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>элемент
+</span><span style='font-family:"Courier New";color:green'>неопределённого типа
+в качестве значения<br>
+// переменной </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>e</span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'><br>
+</span><a name=genEl><span lang=EN-US style='font-family:"Courier New";
+color:red;mso-ansi-language:EN-US'>genEl</span></a><span style='mso-bookmark:
+genEl'></span><span style='font-family:"Courier New"'>([<span style='color:
+fuchsia'>1_</span>: </span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>assign</span><span style='font-family:"Courier New"'>_:
+</span><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'>const</span><span style='font-family:"Courier New"'>_: </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>undf</span><span
+style='font-family:"Courier New"'>_: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>e</span><span style='font-family:"Courier New"'>])<br>
+<br>
+<span style='color:green'>// </span></span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'>атрибут </span><a name="assign_"><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>assign</span></a><span
+style='mso-bookmark:assign_'><span style='font-family:"Courier New";color:green'>_</span></span><span
+style='font-family:"Courier New";color:green'> говорит о том, что значение
+операнда,<br>
+// являющегося переменной должно быть </span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'>определе</span><span
+style='font-family:"Courier New";color:green'>но <br>
+// в процессе реализации оператора, т</span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'>о</span><span style='font-family:
+"Courier New";color:green'> е</span><span lang=BE style='font-family:"Courier New";
+color:green;mso-ansi-language:BE'>сть</span><span style='font-family:"Courier New";
+color:green'> в данном<br>
+// случае - сгенерировано</span><span style='font-family:"Courier New"'><br>
+<span style='color:green'><br>
+/////////////////////////////////////////////////////<br>
+// с помощью оператора </span></span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>genElStr</span><span style='font-family:
+"Courier New";color:green'>5 создаются:<br>
+// константный узел, выходящая из него константная<br>
+// нечёткая дуга и входящая в неё из узла </span><span lang=EN-US
+style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>S</span><span
+style='font-family:"Courier New";color:green'><br>
+// </span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>константная позитиная дуга, являющиеся</span><span
+style='font-family:"Courier New";color:green'><br>
+// значениями переменных </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>node</span><span style='font-family:"Courier New";
+color:green'>, </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>fuzzy</span><span style='font-family:"Courier New";
+color:green'>_</span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>arc</span><span lang=EN-US
+style='font-family:"Courier New";color:green'> </span><span style='font-family:
+"Courier New";color:green'>и<br>
+// </span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>positive</span><span style='font-family:"Courier New";
+color:green'>_</span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>arc</span><span lang=EN-US
+style='font-family:"Courier New";color:green'> </span><span style='font-family:
+"Courier New";color:green'>соответственно</span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'><br>
+</span><a name=genElStr5><span lang=EN-US style='font-family:"Courier New";
+color:red;mso-ansi-language:EN-US'>genElStr</span></a><span style='mso-bookmark:
+genElStr5'><span style='font-family:"Courier New";color:red'>5</span></span><span
+style='mso-bookmark:genElStr5'></span><span style='font-family:"Courier New"'>([<span
+style='color:fuchsia'>1_</span>: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>assign</span><span style='font-family:
+"Courier New"'>_: </span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>const</span><span style='font-family:"Courier New"'>_:
+</span><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'>node</span><span style='font-family:"Courier New"'>,<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:fuchsia'>2_</span><span
+style='font-family:"Courier New"'>: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>assign</span><span style='font-family:
+"Courier New"'>_: </span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>const</span><span style='font-family:"Courier New"'>_:
+</span><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'>fuz</span><span style='font-family:"Courier New"'>_: </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>fuzzy</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>arc</span><span style='font-family:"Courier New"'>,<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:fuchsia'>3_</span><span
+style='font-family:"Courier New"'>:</span><span lang=EN-US style='font-family:
+"Courier New";color:green;mso-ansi-language:EN-US'>&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>fixed</span><span
+style='font-family:"Courier New"'>_: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>e</span><span style='font-family:"Courier New"'>,<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:fuchsia'>4_</span><span
+style='font-family:"Courier New"'>: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>assign</span><span style='font-family:
+"Courier New"'>_: </span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>const</span><span style='font-family:"Courier New"'>_:
+</span><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'>pos</span><span style='font-family:"Courier New"'>_: </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>positive</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>arc</span><span style='font-family:"Courier New"'>,<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:fuchsia'>5_</span><span
+style='font-family:"Courier New"'>:</span><span lang=EN-US style='font-family:
+"Courier New";color:green;mso-ansi-language:EN-US'>&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>fixed</span><span
+style='font-family:"Courier New"'>_: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>S</span><span style='font-family:"Courier New"'>])<br>
+<br>
+<span style='color:green'>/////////////////////////////////////////////////////<br>
+// с помощью оператора </span></span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>genElStr</span><span style='font-family:
+"Courier New";color:green'>3 создаётся<br>
+// </span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>константная позитиная дуга, являющаяся</span><span
+style='font-family:"Courier New";color:green'><br>
+// значением </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>positive</span><span style='font-family:
+"Courier New";color:green'>_</span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>arc</span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'><br>
+</span><a name=genElStr3><span lang=EN-US style='font-family:"Courier New";
+color:red;mso-ansi-language:EN-US'>genElStr</span></a><span style='mso-bookmark:
+genElStr3'><span style='font-family:"Courier New";color:red'>3</span></span><span
+style='mso-bookmark:genElStr3'></span><span style='font-family:"Courier New"'>([<span
+style='color:fuchsia'>1_</span>:<span style='mso-spacerun:yes'>  </span></span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>fixed</span><span
+style='font-family:"Courier New"'>_: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>S</span><span style='font-family:"Courier New"'>,<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:fuchsia'>2_</span><span
+style='font-family:"Courier New"'>: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>assign</span><span style='font-family:
+"Courier New"'>_: </span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>const</span><span style='font-family:"Courier New"'>_:
+</span><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+EN-US'>pos</span><span style='font-family:"Courier New"'>_: </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>positive</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>arc</span><span style='font-family:"Courier New"'>,<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:fuchsia'>3_</span><span
+style='font-family:"Courier New"'>:</span><span lang=EN-US style='font-family:
+"Courier New";color:green;mso-ansi-language:EN-US'>&nbsp;</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span lang=EN-US
+style='font-family:"Courier New";mso-ansi-language:EN-US'>fixed</span><span
+style='font-family:"Courier New"'>_: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>node</span><span style='font-family:
+"Courier New"'>])<br>
+<br>
+<span style='color:green'>/////////////////////////////////////////////////////<br>
+// с помощью оператора </span></span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>printEl</span><span lang=EN-US
+style='font-family:"Courier New";color:green'> </span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'>выводим
+информацию</span><span style='font-family:"Courier New";color:green'><br>
+// о типе значений операндов </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>S</span><span lang=EN-US style='font-family:
+"Courier New";color:green'> </span><span style='font-family:"Courier New";
+color:green'>и </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>fuzzy</span><span style='font-family:"Courier New";
+color:green'>_</span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>arc</span><span style='font-family:"Courier New";
+color:green'>, а также о</span><span lang=BE style='font-family:"Courier New";
+color:green;mso-ansi-language:BE'><br>
+</span><span style='font-family:"Courier New";color:green'>// </span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>типе
+элементов, входящих в их видимую окрестность<br>
+</span><span style='font-family:"Courier New";color:green'>// по входящим и
+выходящим дугам</span><span lang=BE style='font-family:"Courier New";
+color:green;mso-ansi-language:BE'><br>
+</span><a name=printEl><span lang=EN-US style='font-family:"Courier New";
+color:red;mso-ansi-language:EN-US'>printEl</span></a><span style='mso-bookmark:
+printEl'></span><span style='font-family:"Courier New"'>([<span
+style='color:fuchsia'>1_</span>: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>fixed</span><span style='font-family:
+"Courier New"'>_: </span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>S</span><span style='font-family:"Courier New"'>])<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>printEl</span><span style='font-family:"Courier New"'>([<span
+style='color:fuchsia'>1_</span>: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>fixed</span><span style='font-family:
+"Courier New"'>_: </span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>fuzzy</span><span style='font-family:"Courier New"'>_</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>arc</span><span
+style='font-family:"Courier New"'>])<br>
+<br>
+<span style='color:green'>// </span></span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'>оператор </span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>printEl</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:green'>используется наряду с операторами</span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'><br>
+</span><span style='font-family:"Courier New";color:green'>// </span><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>printNl</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:green'>и </span><span lang=EN-US
+style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>print</span><span
+lang=EN-US style='font-family:"Courier New";color:green'> </span><span
+style='font-family:"Courier New";color:green'>в целях отладки</span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'><br>
+<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>return</span><span style='font-family:"Courier New"'>()<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>end</span><span style='font-family:"Courier New";color:red'><br>
+</span><span style='font-family:"Courier New";color:green'>/* </span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>результат
+работы программы в протоколе будет <br>
+выглядеть следую</span><span style='font-family:"Courier New";color:green'>щи</span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>м
+образом:<br>
+</span><span lang=BE style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+BE'><span style='mso-spacerun:yes'> </span>...<br>
+<span style='mso-spacerun:yes'> </span>Executing gen_sample_op1 of prg.
+gen_sample(006D62F0)</span><span lang=EN-US style='font-family:"Courier New";
+color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing gen_sample_op2 of
+prg. gen_sample(006D62F0)</span><span lang=EN-US style='font-family:"Courier New";
+color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing gen_sample_op3 of
+prg. gen_sample(006D62F0)</span><span lang=EN-US style='font-family:"Courier New";
+color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing gen_sample_op4 of
+prg. gen_sample(006D62F0)</span><span lang=EN-US style='font-family:"Courier New";
+color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>printEl:
+node|const:/tmp/console_run/consts_gen_sample/S</span><span lang=EN-US
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Output arcs:</span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+<span style='mso-tab-count:1'>      </span>arc|const|pos:/tmp/autoseg/tmp_2168
+&gt;- arc|const|fuz:/tmp/autoseg/tmp_2159<br>
+<span style='mso-tab-count:1'>      </span>arc|const|pos:/tmp/autoseg/tmp_2181
+&gt;- node|const:/tmp/autoseg/tmp_2150<br>
+<br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Input arcs:</span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+<br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing gen_sample_op5 of
+prg. gen_sample(006D62F0)</span><span lang=EN-US style='font-family:"Courier New";
+color:#0099CC;mso-ansi-language:EN-US'> <br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>printEl:
+arc|const|fuz:/tmp/autoseg/tmp_2159 =
+&lt;node|const:/tmp/autoseg/tmp_2150,undf|const:/tmp/autoseg/tmp_2136&gt;</span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Output arcs:</span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+<br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Input arcs:</span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'><br>
+</span><span lang=BE style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+BE'><span style='mso-tab-count:1'>      </span>arc|const|pos:/tmp/autoseg/tmp_2168
+-&lt; node|const:/tmp/console_run/consts_gen_sample/S</span><span lang=EN-US
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'><br>
+<br>
+<span style='mso-spacerun:yes'> </span></span><span lang=BE style='font-family:
+"Courier New";color:#0099CC;mso-ansi-language:BE'>Executing gen_sample_op</span><span
+lang=EN-US style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+EN-US'>6</span><span lang=BE style='font-family:"Courier New";color:#0099CC;
+mso-ansi-language:BE'> of prg. gen_sample(006D62F0)</span><span lang=EN-US
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-US'> <br>
+</span><span lang=BE style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+BE'><span style='mso-spacerun:yes'> </span>...</span><span lang=EN-GB
+style='font-family:"Courier New";color:#0099CC;mso-ansi-language:EN-GB'><br>
+</span><span style='font-family:"Courier New";color:green'>*/<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

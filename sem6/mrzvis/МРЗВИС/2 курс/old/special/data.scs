@@ -1,0 +1,31 @@
+/////////////////////////////////////////////////////
+//        File: data.scs
+// Description: data for samples
+/////////////////////////////////////////////////////
+//      Author: IVP
+//        Date: 9.02.2003
+//              created
+
+S = "/tmp/data/S";
+C = "/tmp/data/C";
+"/tmp/data/a" = {};
+"/tmp/data/d" = {};
+"/tmp/data/g" = {};
+"/tmp/data/a" >- "/tmp/data/ac"  >- "/tmp/data/c"; 
+"/tmp/data/b" >- "/tmp/data/bac" >- "/tmp/data/ac";
+"/tmp/data/d" >- "/tmp/data/df"  >- "/tmp/data/f"; 
+"/tmp/data/e" >- "/tmp/data/edf" >- "/tmp/data/df";
+S >- "/tmp/data/Sa"   >- "/tmp/data/a";
+S >- "/tmp/data/Sac"  >- "/tmp/data/ac";
+S >- "/tmp/data/Sc"   >- "/tmp/data/c"; 
+S >- "/tmp/data/Sb"   >- "/tmp/data/b";
+S >- "/tmp/data/Sbac" >- "/tmp/data/bac"; 
+S >- "/tmp/data/Sd"   >- "/tmp/data/d";
+S >- "/tmp/data/Sdf"  >- "/tmp/data/df";
+S >- "/tmp/data/Sf"   >- "/tmp/data/f"; 
+S >- "/tmp/data/Se"   >- "/tmp/data/e";
+S >- "/tmp/data/Sedf" >- "/tmp/data/edf"; 
+S >- "/tmp/data/Sg"   >- "/tmp/data/g";
+C >- "/tmp/data/Ca"   >- "/tmp/data/a";
+C >- "/tmp/data/Cb"   >- "/tmp/data/b";
+C >- "/tmp/data/CSa"  >- "/tmp/data/Sa";

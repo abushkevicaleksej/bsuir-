@@ -1,0 +1,251 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<title>Краткое руководство по программированию на языке SCP в формате m4scp.</title>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<link rel=Stylesheet type="text/css" media=all href=active.css>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+        {mso-style-parent:"";
+        margin:0cm;
+        margin-bottom:.0001pt;
+        mso-pagination:widow-orphan;
+        text-autospace:none;
+        font-size:10.0pt;
+        font-family:"Times New Roman";
+        mso-fareast-font-family:"Times New Roman";}
+h1
+        {mso-margin-top-alt:auto;
+        margin-right:0cm;
+        mso-margin-bottom-alt:auto;
+        margin-left:0cm;
+        mso-pagination:widow-orphan;
+        mso-outline-level:1;
+        font-size:24.0pt;
+        font-family:"Times New Roman";}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+        {margin:0cm;
+        margin-bottom:.0001pt;
+        mso-pagination:widow-orphan;
+        text-autospace:none;
+        font-size:10.0pt;
+        font-family:"Times New Roman";
+        mso-fareast-font-family:"Times New Roman";}
+span.MsoFootnoteReference
+        {color:black;
+        mso-text-animation:none;
+        font-weight:bold;
+        text-decoration:none;
+        text-underline:none;
+        text-decoration:none;
+        text-line-through:none;
+        vertical-align:super;}
+@page Section1
+        {size:612.0pt 792.0pt;
+        margin:2.0cm 42.5pt 2.0cm 3.0cm;
+        mso-header-margin:35.4pt;
+        mso-footer-margin:35.4pt;
+        mso-paper-source:0;}
+div.Section1
+        {page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+        {mso-style-name:"Обычная таблица";
+        mso-tstyle-rowband-size:0;
+        mso-tstyle-colband-size:0;
+        mso-style-noshow:yes;
+        mso-style-parent:"";
+        mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+        mso-para-margin:0cm;
+        mso-para-margin-bottom:.0001pt;
+        mso-pagination:widow-orphan;
+        font-size:10.0pt;
+        font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="16386"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=gray vlink=black style='tab-interval:35.4pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<p class=MsoFootnoteText style='margin-bottom:12.0pt'><span style='font-family:
+"Courier New";color:green'>/////////////////////////////////////////////////////<br>
+//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Файл: __</span><span lang=EN-US
+style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>file</span><span
+style='font-family:"Courier New";color:green'>__</span><b><span
+style='font-family:"Courier New";color:red'><br>
+</span></b><span style='font-family:"Courier New";color:green'>//&nbsp;<span
+style='mso-spacerun:yes'>   </span>Описание: программа «Привет, мир!»</span><span
+style='font-family:"Courier New"'><br>
+<span style='color:green'>//&nbsp; Размещение: /</span><br>
+<span style='color:green'>/////////////////////////////////////////////////////<br>
+//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Автор: ИВП</span><b><span
+style='color:red'><br>
+</span></b><span style='color:green'>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Дата: 9.02.2003</span><b><span style='color:red'><br>
+</span></b><span style='color:green'>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+создано<br>
+<br>
+</span><span style='color:blue'>#</span></span><span lang=EN-US
+style='font-family:"Courier New";color:blue;mso-ansi-language:EN-US'>include</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'> </span><span
+style='font-family:"Courier New";color:red'>&quot;</span><span lang=EN-US
+style='font-family:"Courier New";color:red;mso-ansi-language:EN-US'><a
+href="scp_keynodes.scsy">scp<span lang=RU style='mso-ansi-language:RU'>_</span>keynodes<span
+lang=RU style='mso-ansi-language:RU'>.</span>scsy</a></span><span
+style='font-family:"Courier New";color:red'>&quot;<span style='mso-tab-count:
+1'> </span><br>
+<br>
+</span><span style='font-family:"Courier New";color:green'>/////////////////////////////////////////////////////<br>
+// текст программ</span><span lang=BE style='font-family:"Courier New";
+color:green;mso-ansi-language:BE'>ы<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>program</span><span style='font-family:"Courier New"'>(</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>hi</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>world</span><span style='font-family:
+"Courier New"'>,<br>
+<span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> [[ </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>const</span><span
+style='font-family:"Courier New"'>_</span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>string</span><span style='font-family:
+"Courier New"'> = /&quot;</span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>Hi</span><span style='font-family:"Courier New"'>, </span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>world</span><span
+style='font-family:"Courier New"'>!&quot;/ <span style='color:green'>// здесь
+объявляем константу,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// текстовым содержимым</span> <br>
+<span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// которой является строка:</span><br>
+<span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// </span></span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>“</span><span lang=EN-GB style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-GB'>Hi</span><span style='font-family:"Courier New";
+color:green'>, </span><span lang=EN-GB style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-GB'>world</span><span style='font-family:"Courier New";
+color:green'>!</span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>”</span><span style='font-family:"Courier New"'><br>
+<span style='color:green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ]])<br>
+<br>
+<span style='color:green'>/////////////////////////////////////////////////////<br>
+// с помощью оператора </span></span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>printNl</span><span lang=EN-US
+style='font-family:"Courier New";color:green'> </span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'>п</span><span
+style='font-family:"Courier New";color:green'>од</span><span lang=BE
+style='font-family:"Courier New";color:green;mso-ansi-language:BE'>аём </span><span
+style='font-family:"Courier New";color:green'>объявленную<br>
+// строку </span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>на консольный вывод, предназначенный<br>
+</span><span style='font-family:"Courier New";color:green'>// </span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>для
+целей отладки<br>
+</span><a name=printNl><span lang=EN-US style='font-family:"Courier New";
+color:red;mso-ansi-language:EN-US'>printNl</span></a><span style='mso-bookmark:
+printNl'></span><span style='font-family:"Courier New"'>([<span
+style='color:fuchsia'>1_</span>: </span><span lang=EN-US style='font-family:
+"Courier New";mso-ansi-language:EN-US'>fixed</span><span style='font-family:
+"Courier New"'>_: </span><span lang=EN-US style='font-family:"Courier New";
+mso-ansi-language:EN-US'>const</span><span style='font-family:"Courier New"'>_</span><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>string</span><span
+style='font-family:"Courier New"'>])<br>
+<br>
+<span style='color:green'>// </span></span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'>атрибут </span><a name="fixed_"><span
+lang=EN-US style='font-family:"Courier New";color:green;mso-ansi-language:EN-US'>fixed</span></a><span
+style='mso-bookmark:fixed_'><span style='font-family:"Courier New";color:green'>_</span></span><span
+style='font-family:"Courier New";color:green'> говорит о том, что значение
+операнда<br>
+// </span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>определено, последнее справедливо для всех констант</span><span
+lang=BE style='font-family:"Courier New";mso-ansi-language:BE'> </span><span
+style='font-family:"Courier New"'><br>
+<span style='color:green'><br>
+</span></span><span lang=EN-US style='font-family:"Courier New";color:red;
+mso-ansi-language:EN-US'>return</span><span style='font-family:"Courier New"'>()<br>
+</span><span lang=EN-US style='font-family:"Courier New";color:red;mso-ansi-language:
+EN-US'>end</span><span style='font-family:"Courier New";color:red'><br>
+</span><span style='font-family:"Courier New";color:green'>/* </span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>результат
+работы программы в протоколе будет <br>
+выглядеть следую</span><span style='font-family:"Courier New";color:green'>щи</span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>м
+образом:<br>
+</span><span lang=BE style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+BE'><span style='mso-spacerun:yes'> </span>...<br>
+<span style='mso-spacerun:yes'> </span>Executing hi_world_op1 of prg.
+hi_world(006BD350)<br>
+<span style='mso-spacerun:yes'> </span>Hi, world!<br>
+<span style='mso-spacerun:yes'> </span>Executing hi_world_op2 of prg.
+hi_world(006BD350)</span><span style='font-family:"Courier New";color:#0099CC'><br>
+</span><span lang=BE style='font-family:"Courier New";color:#0099CC;mso-ansi-language:
+BE'><span style='mso-spacerun:yes'> </span>...</span><span style='font-family:
+"Courier New";color:#0099CC'><br>
+</span><span style='font-family:"Courier New";color:green'>*/<br>
+<br>
+// такого же эффекта мо</span><span lang=BE style='font-family:"Courier New";
+color:green;mso-ansi-language:BE'>жно</span><span style='font-family:"Courier New";
+color:green'> добиться, если<br>
+// </span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>использовать</span><span style='font-family:"Courier New";
+color:green'> оператор </span><a name=print><span lang=EN-US style='font-family:
+"Courier New";color:green;mso-ansi-language:EN-US'>print</span></a><span
+style='mso-bookmark:print'></span><span lang=EN-US style='font-family:"Courier New";
+color:green'> </span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>для константы,<br>
+</span><span style='font-family:"Courier New";color:green'>// </span><span
+lang=BE style='font-family:"Courier New";color:green;mso-ansi-language:BE'>содержащей
+строку “</span><span lang=EN-US style='font-family:"Courier New";color:green;
+mso-ansi-language:EN-US'>Hi</span><span style='font-family:"Courier New";
+color:green'>, </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>world</span><span style='font-family:"Courier New";
+color:green'>!\</span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>n</span><span lang=BE style='font-family:
+"Courier New";color:green;mso-ansi-language:BE'>”</span><span style='font-family:
+"Courier New";color:green'>;<br>
+// операторы </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>print</span><span lang=EN-US
+style='font-family:"Courier New";color:green'> </span><span style='font-family:
+"Courier New";color:green'>и </span><span lang=EN-US style='font-family:"Courier New";
+color:green;mso-ansi-language:EN-US'>printNl</span><span lang=EN-US
+style='font-family:"Courier New";color:green'> </span><span style='font-family:
+"Courier New";color:green'>предназначены для целей<br>
+// </span><span lang=BE style='font-family:"Courier New";color:green;
+mso-ansi-language:BE'>протоколирования работы интерпретатора<br>
+</span><span style='font-family:"Courier New";color:green'>// процессорного
+модуля, что полезно в режиме<br>
+// отладки<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+</div>
+
+</body>
+
+</html>

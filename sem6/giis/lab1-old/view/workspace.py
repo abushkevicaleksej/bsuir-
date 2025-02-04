@@ -29,11 +29,11 @@ class Workspace(ttk.Frame):
             screen_y = center_y - i * self.scale_factor
 
             self.canvas.create_line(screen_x, 0, screen_x, self.canvas_height, fill="lightgray")
-            if i % 1 == 0:
+            if i % 5 == 0:
                 self.canvas.create_text(screen_x + 5, center_y + 5, text=str(i), anchor="nw", font=("Arial", 8))
 
             self.canvas.create_line(0, screen_y, self.canvas_width, screen_y, fill="lightgray")
-            if i % 1 == 0:
+            if i % 5 == 0:
                 self.canvas.create_text(center_x + 5, screen_y + 5, text=str(i), anchor="nw", font=("Arial", 8))
 
         self.canvas.create_line(0, center_y, self.canvas_width, center_y, fill="black", width=2)  # X-ось

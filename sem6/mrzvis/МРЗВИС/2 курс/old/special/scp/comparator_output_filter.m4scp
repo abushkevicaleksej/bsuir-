@@ -1,0 +1,96 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+// Location: /lib/set/comparator_output_filter
+// v1_dANUg_v2
+])
+
+procedure(set_comparator_output_filter,
+M4SCS(	[[	chain_get_next = "/lib/chain/get_next/chain_get_next",
+		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8]])
+M4SEC(	[[	chain_get_next = /../chain/get_next[SYFIX]/chain_get_next,
+		chain_get_next_singlet = /../chain/get_next_singlet[SYFIX]/chain_get_next_singlet,
+		prm1,prm2,prm3,prm4,prm5,prm6,prm7,prm8]]), 
+	[{
+		link, sublink,
+		value,
+		origin, 
+		state,
+		true,
+		history,
+		parameters, 
+		logging,
+		routine,
+		parameters,
+		empty,
+		descr}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: history, 
+		4_: in_: parameters,
+		5_: in_: logging
+	]}) 
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm1 = [{1_: history, 2_: link, 3_: value}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: link],,final)
+searchElStr3([	1_: assign_: node_: descr,
+		2_: fixed_: value,
+		3_: assign_: arc_: node_: undf_: origin],,final)
+
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prm2 = [{1_: link, 2_: link, 3_: value}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: link],,final)
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm3 = [{1_: parameters, 2_: link, 3_: sublink}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+searchElStr3([	1_: assign_: node_: descr,
+		2_: fixed_: value,
+		3_: fixed_: origin],,else)
+
+ifVarAssign([1_: link],,set_state)
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm4 = [{1_: sublink, 2_: sublink, 3_: routine}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: sublink],get_parameters)
+label(set_state)
+varAssign([1_: fixed_: state, 2_: fixed_: true],final,final)
+label(else)
+ifVarAssign([1_: link],,final)
+
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm5 = [{1_: link, 2_: link, 3_: sublink}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifVarAssign([1_: link],,final)
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm6 = [{1_: sublink, 2_: sublink, 3_: routine}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+label(get_parameters)
+call([1_: fixed_: chain_get_next, 2_: fixed_: prm7 = [{1_: sublink, 2_: sublink, 3_: parameters}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+genEl([1_: assign_: node_: const_: empty])
+
+ifVarAssign([1_: parameters],call_routine)
+varAssign([1_: fixed_: parameters, 2_: fixed_: empty])
+label(call_routine)
+call([1_: fixed_: routine, 2_: fixed_: prm8 = [{1_: state, 2_: true, 3_: history, 4_: parameters, 5_: logging}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+eraseEl([1_: fixed_: f_: empty])
+
+label(final)
+
+return()
+end()

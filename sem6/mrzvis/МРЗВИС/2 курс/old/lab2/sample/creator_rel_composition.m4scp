@@ -1,0 +1,170 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+// Location: /lib/test/creator_rel_composition
+])
+procedure(test_creator_rel_composition,
+M4SCS(	[[
+		enter_message = /"test_creator_rel_composition: entering\n"/,
+		leave_message = /"test_creator_rel_composition: leaving\n"/,
+		nodes_message = /"nodes:\n"/,
+		rel1_message = /"relation No1:\n"/,
+		rel2_message = /"relation No2:\n"/,
+		composition_rel_message = /"composition rel:\n"/,
+		composition_arc_message = /"composition arc:\n"/,
+		
+		chain_push = "/lib/chain/push/chain_push",
+		chain_push_first = "/lib/chain/push_first/chain_push_first",
+		chain_destroy = "/lib/chain/destroy/chain_destroy",
+		set_create_composition = "/lib/set/create_composition/set_create_composition";
+
+		prmp1,prmp2,prmp3,prmp4,prmc1,prmd1,prmd2, prmd3
+	]])
+M4SEC(	[[
+		chain_push = /../chain/push[SYFIX]/chain_push,
+		chain_push_first = /../chain/push_first[SYFIX]/chain_push_first,
+		chain_destroy = /../chain/destroy[SYFIX]/chain_destroy,
+		set_create_composition = /../set/create_composition[SYFIX]/set_create_composition,
+
+		prmp1,prmp2,prmp3,prmp4,prmc1,prmd1,prmd2, prmd3
+	]]), 
+	[{
+		setA, setB, nodeA, nodeB, nodeC, nodeD, nodeE,
+		history, parameters, args_chain,
+		empty, state, result,
+		arc2, arc3, arc4, descr
+	}], 
+	{[]}
+) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+genEl([1_: assign_: node_: const_: empty])
+
+genEl([1_: assign_: node_: const_: setA])
+
+genEl([1_: assign_: node_: const_: setB])
+
+genElStr5([
+	1_: assign_: node_: const_: nodeA,
+	2_: assign_: arc_: const_: pos_: permanent_: actual_: arc2,
+	3_: assign_: node_: const_: nodeB,
+	4_: assign_: arc_: const_: pos_: permanent_: actual_: arc4,
+	5_: fixed_: setA
+])
+
+genElStr5([
+	1_: fixed_: nodeB,
+	2_: assign_: arc_: const_: pos_: permanent_: actual_: arc2,
+	3_: assign_: node_: const_: nodeC,
+	4_: assign_: arc_: const_: pos_: permanent_: actual_: arc4,
+	5_: fixed_: setA
+])
+
+genElStr5([
+	1_: fixed_: nodeC,
+	2_: assign_: arc_: const_: pos_: permanent_: actual_: arc2,
+	3_: assign_: node_: const_: nodeD,
+	4_: assign_: arc_: const_: pos_: permanent_: actual_: arc4,
+	5_: fixed_: setB
+])
+
+genElStr5([
+	1_: fixed_: nodeD,
+	2_: assign_: arc_: const_: pos_: permanent_: actual_: arc2,
+	3_: assign_: node_: const_: nodeE,
+	4_: assign_: arc_: const_: pos_: permanent_: actual_: arc4,
+	5_: fixed_: setB
+])
+
+genEl([1_: assign_: node_: const_: state])
+
+genEl([1_: assign_: node_: const_: result])
+
+M4SCS(
+	print([1_: fixed_: composition_rel_message])
+	printEl([1_: fixed_: result])
+)
+
+M4SCS(
+	print([1_: fixed_: nodes_message])
+	printEl([1_: fixed_: nodeA])
+	printEl([1_: fixed_: nodeB])
+	printEl([1_: fixed_: nodeC])
+	printEl([1_: fixed_: nodeD])
+	printEl([1_: fixed_: nodeE])
+
+	print([1_: fixed_: rel1_message])
+	printEl([1_: fixed_: setA])
+
+	print([1_: fixed_: rel2_message])
+	printEl([1_: fixed_: setB])
+)
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp1 = [{1_: setA, 2_: args_chain, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push, 2_: fixed_: prmp2 = [{1_: args_chain, 2_: setB, 3_: args_chain, 4_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp3 = [{1_: args_chain, 2_: history, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_push_first, 2_: fixed_: prmp4 = [{1_: result, 2_: parameters, 3_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: set_create_composition, 2_: fixed_: prmc1 = [{1_: state, 2_: empty, 3_: history, 4_: parameters, 5_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+M4SCS(
+	print([1_: fixed_: composition_rel_message])
+	printEl([1_: fixed_: result])
+)
+
+label(next_composition_arc)
+searchElStr3([
+	1_: fixed_: result,
+	2_: assign_: arc_: const_: pos_: actual_: arc2,
+	3_: assign_: arc_: const_: fuz_: temporary_: actual_: arc3
+], , finish)
+
+M4SCS(
+	print([1_: fixed_: composition_arc_message])
+	printEl([1_: fixed_: arc3])
+)
+
+eraseEl([1_: fixed_: f_: arc2], next_composition_arc)
+
+label(finish)
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd1 = [{1_: parameters, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd2 = [{1_: history, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_destroy, 2_: fixed_: prmd3 = [{1_: args_chain, 2_: empty}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+eraseEl([1_: fixed_: f_: setA])
+eraseEl([1_: fixed_: f_: setB])
+eraseEl([1_: fixed_: f_: nodeA])
+eraseEl([1_: fixed_: f_: nodeB])
+eraseEl([1_: fixed_: f_: nodeC])
+eraseEl([1_: fixed_: f_: nodeD])
+eraseEl([1_: fixed_: f_: nodeE])
+eraseEl([1_: fixed_: f_: empty])
+eraseEl([1_: fixed_: f_: state])
+eraseEl([1_: fixed_: f_: result])
+
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()

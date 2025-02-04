@@ -1,0 +1,75 @@
+m4include(m4define([m4currentFile],builtin(translit,__file__,\,/))builtin(regexp,m4currentFile,.*[/],\&)_config.m4)
+M4SCS([
+#include "../../include/sckp_keynodes.scsy" 
+///////////////////////////////////////////////////////
+//        File: comparator_simple.m4scp
+// Description: compare if coin two elements
+///////////////////////////////////////////////////////
+//      Author: Yalchyk Ilya
+//        Date: 18.12.2013
+//    Location: /lib/set/comparator_simple
+// Output parameters:	1	-	state
+//			2	-	true
+//			3	-	history
+// Input parameters:	3	-	history = (elemA, elemB, ...)
+//			4	-	parameters
+//			5	-	logging
+// Execution input time complexity:	constant, logging dependable
+// Execution output time complexity:	logging dependable
+// Execution input space complexity:	constant, logging dependable
+// Execution output space complexity:	logging dependable
+])
+
+procedure(set_comparator_simple,
+M4SCS(	[[
+		enter_message = /"set_comparator_simple: entering\n\n"/,
+		leave_message = /"set_comparator_simple: leaving\n"/,
+	
+		chain_get_next_singlet = "/lib/chain/get_next_singlet/chain_get_next_singlet",
+		prmg1, prmg2
+	]])
+M4SEC(	[[
+		chain_get_next_singlet = /../chain/get_next[SYFIX]/chain_get_next_singlet,
+		prmg1, prmg2
+	]]),
+	[{
+		state, true, history, parameters, logging,
+		elemA, elemB, descr
+	}], 
+	{[ 
+		1_: in_: out_: state,
+		2_: in_: out_: true,
+		3_: in_: out_: history, 
+		4_: in_: parameters,
+		5_: in_: logging
+	]}) 
+
+DBG(M4SCS(print([1_: fixed_: enter_message])))
+
+// получаем то множество, в которое будем добавлять элементы (дуги) композиции
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg1 = [{1_: history, 2_: history, 3_: elemA}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+call([1_: fixed_: chain_get_next_singlet, 2_: fixed_: prmg2 = [{1_: history, 2_: history, 3_: elemB}], 3_: assign_: descr])
+
+waitReturn([1_: fixed_: descr])
+
+ifCoin([
+	1_: fixed_: elemA,
+	2_: fixed_: elemB
+], , finish)
+
+eraseEl([1_: fixed_: f_: state])
+
+varAssign([
+	1_: assign_: state,
+	2_: fixed_: true
+])
+
+// конец программы
+label(finish)
+DBG(M4SCS(print([1_: fixed_: leave_message])))
+
+return()
+end()
