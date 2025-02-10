@@ -13,5 +13,7 @@ class Main(ttk.Frame):
         self.bottom_frame = ttk.Frame(self, relief="groove", borderwidth=1)
         self.bottom_frame.pack(fill=tk.BOTH, expand=True)
 
-        self.workspace = Workspace(self.bottom_frame)  # Creates Workspace
+        self.workspace = Workspace(self.bottom_frame)
         self.table = Table(self.bottom_frame)
+
+        self.workspace.set_callback(self.table.update_table)
