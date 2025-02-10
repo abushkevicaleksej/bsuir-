@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\calculation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\calculation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\calculation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\calculation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\inputProcessing.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\inputProcessing.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\pipeline.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\pipeline.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\inputProcessing.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\inputProcessing.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\output.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\output.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\calculation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|solutionrelative:lab1\\calculation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8BCE9663-7FB2-4AAE-87F1-85DD1059825C}|lab1\\lab1.vcxproj|E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\output.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -26,54 +42,105 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "inputProcessing.cpp",
+              "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\inputProcessing.cpp",
+              "RelativeDocumentMoniker": "lab1\\inputProcessing.cpp",
+              "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\inputProcessing.cpp",
+              "RelativeToolTip": "lab1\\inputProcessing.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-06T16:02:09.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "inputProcessing.h",
+              "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\inputProcessing.h",
+              "RelativeDocumentMoniker": "lab1\\inputProcessing.h",
+              "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\inputProcessing.h",
+              "RelativeToolTip": "lab1\\inputProcessing.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-06T12:14:50.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "input.txt",
+              "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\input.txt",
+              "RelativeDocumentMoniker": "lab1\\input.txt",
+              "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\input.txt",
+              "RelativeToolTip": "lab1\\input.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-06T07:49:13.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "output.cpp",
+              "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\output.cpp",
+              "RelativeDocumentMoniker": "lab1\\output.cpp",
+              "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\output.cpp",
+              "RelativeToolTip": "lab1\\output.cpp",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-05T21:13:28.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "calculation.cpp",
+              "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\calculation.cpp",
+              "RelativeDocumentMoniker": "lab1\\calculation.cpp",
+              "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\calculation.cpp*",
+              "RelativeToolTip": "lab1\\calculation.cpp*",
+              "ViewState": "AgIAAA0AAAAAAAAAAIAwwBkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-05T21:13:19.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "output.h",
               "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\output.h",
               "RelativeDocumentMoniker": "lab1\\output.h",
               "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\output.h",
               "RelativeToolTip": "lab1\\output.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-04T14:38:08.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "calculation.h",
               "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\calculation.h",
               "RelativeDocumentMoniker": "lab1\\calculation.h",
               "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\calculation.h",
               "RelativeToolTip": "lab1\\calculation.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-04T14:17:53.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T14:17:53.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "pipeline.h",
-              "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\pipeline.h",
-              "RelativeDocumentMoniker": "lab1\\pipeline.h",
-              "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\pipeline.h",
-              "RelativeToolTip": "lab1\\pipeline.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-04T14:17:35.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "lab1.cpp",
               "DocumentMoniker": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\lab1.cpp",
               "RelativeDocumentMoniker": "lab1\\lab1.cpp",
-              "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\lab1.cpp*",
-              "RelativeToolTip": "lab1\\lab1.cpp*",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAuwFwAAAAbAAAAAAAAAA==",
+              "ToolTip": "E:\\BSUIR\\sem6\\mrzvis\\lab1\\lab1\\lab1.cpp",
+              "RelativeToolTip": "lab1\\lab1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-02T17:54:56.896Z",
               "EditorCaption": ""

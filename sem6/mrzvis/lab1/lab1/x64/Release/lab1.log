@@ -1,0 +1,4 @@
+﻿  inputProcessing.h
+  lab1.cpp
+lab1.obj : error LNK2005: "struct std::pair<class std::vector<int,class std::allocator<int> >,class std::vector<int,class std::allocator<int> > > __cdecl inputProcessing(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?inputProcessing@@YA?AU?$pair@V?$vector@HV?$allocator@H@std@@@std@@V12@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z) уже определен в inputProcessing.obj
+E:\BSUIR\sem6\mrzvis\lab1\x64\Release\lab1.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
