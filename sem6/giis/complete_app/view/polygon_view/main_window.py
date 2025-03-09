@@ -5,7 +5,7 @@ from model.polygon_model.fill_algorythm import FillAlgorithms
 from tkinter import messagebox, scrolledtext
 from utils import center_window
 
-class PolygonEditorWindow(tk.Frame):
+class PolygonAppWindow(tk.Frame):
     def __init__(self, parent):
         super().__init__(parent, relief="groove", borderwidth=1)
         self.pack(expand=True, fill=tk.BOTH)

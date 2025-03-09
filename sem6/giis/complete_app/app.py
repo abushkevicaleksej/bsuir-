@@ -2,7 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from view.line_view.app import LineAppWindow
 from view.fig_view.menu import FigureAppWindow
-from view.polygon_view.main_window import PolygonEditorWindow
+from view.other_view.main_window import OtherAppWindow
+from view.polygon_view.main_window import PolygonAppWindow
 from utils import center_window
 
 class CompleteApp(tk.Tk):
@@ -22,11 +23,12 @@ class CompleteApp(tk.Tk):
 
         self.line_entry = LineAppWindow(line_frame)
         self.fig_entry = FigureAppWindow(fig_frame)
-        self.polygons_entry = PolygonEditorWindow(polygons_frame)
+        self.polygons_entry = PolygonAppWindow(polygons_frame)
+        self.other_entry = OtherAppWindow(other_frame)
 
         self.notebook.add(line_frame, text="Линии первого, второго порядка. Кривые")
         self.notebook.add(fig_frame, text="Функционал для работы с 3D")
         self.notebook.add(polygons_frame, text="Полигоны")
-        self.notebook.add(other_frame, text="Триангуляция и др.")
+        self.notebook.add(other_frame, text="Триангуляция Делоне и диаграмма Вороного.")
 
         self.mainloop()
