@@ -4,195 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2401965a-aa53-466b-a10e-853ff894d0c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/lab1-old.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/model/point.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/model/shape.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/view/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/view/center_window.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/view/menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab4/view/workspace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/lab1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/imports.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/imports.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/view/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/view/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/view/center_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/view/center_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/view/edit.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/view/edit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/view/main_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/view/main_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/view/table.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/view/table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eyaziis/lab1/view/workspace.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../eyaziis/lab1/view/workspace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab1-new/model/brez.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1-new/model/brez.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab1-new/model/cda.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1-new/model/cda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab1-new/model/wu.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1-new/model/wu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/line.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/line.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/mode.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/mode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/parametric_lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/parametric_lines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/params.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/tabledrawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/tabledrawer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/center_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/center_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/compile_circle_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/compile_circle_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/compile_curve_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/compile_curve_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/compile_segment_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/compile_segment_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/main_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/select_curve_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/select_curve_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/select_line_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/select_line_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/select_mode_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/select_mode_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/table.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/workspace.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/workspace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iad/lw1/pythonProject/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iad/lw1/pythonProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iad/lw1/pythonProject/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iad/lw1/pythonProject/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iad/lw1/pythonProject/.idea/pythonProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iad/lw1/pythonProject/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../iad/lw1/pythonProject/lw1.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/.vs/lab1/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/.vs/lab1/v17/DocumentLayout.backup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/.vs/lab1/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/.vs/lab1/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/calculation.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/calculation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/inputProcessing.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/inputProcessing.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/inputProcessing.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/inputProcessing.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/lab1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/lab1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/lab1.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/lab1.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/lab1.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/lab1.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/lab1.vcxproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/lab1.vcxproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/output.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/output.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.exe.recipe" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.exe.recipe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.tlog/Cl.items.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.tlog/lab1.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.tlog/lab1.lastbuildstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Debug/lab1.tlog/link.secondary.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Release/lab1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Release/lab1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Release/lab1.tlog/lab1.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1/lab1/x64/Release/lab1.tlog/lab1.lastbuildstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/FileContentIndex/4ac4aaf4-ac9b-4977-bc07-d27fd4b4a670.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/FileContentIndex/c2b77dca-ee4b-41b9-9bc8-2f3d5e317d82.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/FileContentIndex/deb11dcf-53d1-4ed4-8d91-fbe4d3a6ba8f.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/v17/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/v17/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/v17/DocumentLayout.backup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/.vs/lab1_new/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/lab1_new.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/lab1_new.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/lab1_new.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/lab1_new.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/lab1_new.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/lab1_new.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/lab1_new.vcxproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/lab1_new.vcxproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/lab1_new.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/lab1_new.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/lab1_new.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/lab1_new.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/lab1_new.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/lab1_new.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/lab1_new.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/lab1_new.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/vc143.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/lab1_new/x64/Debug/vc143.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/x64/Debug/lab1_new.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/x64/Debug/lab1_new.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/lab1_new/x64/Debug/lab1_new.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/lab1_new/x64/Debug/lab1_new.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/lab1/multiplication_algorithm.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/lab1/multiplication_algorithm.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/lit/psmlit.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/lit/psmlit.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/_old/lab1/lab1.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/_old/lab1/lab1.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/_old/lab1/old/lab1.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/_old/lab1/old/lab1.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/_old/lab2/old/task" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/_old/lab2/old/task" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/_old/quest/urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/_old/quest/urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab1/PM/pm.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab1/PM/pm.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab1/sample/reverse.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab1/sample/reverse.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab1/todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab1/todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/counter_APA_output.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/counter_APA_output.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/incrementor.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/incrementor.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/build_composition_pair.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/build_composition_pair.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/comparator_simple.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/comparator_simple.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/create_composition.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/create_composition.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/create_composition_then.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/create_composition_then.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/creator_rel_composition.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/creator_rel_composition.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/creator_rel_composition2.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/sample/creator_rel_composition2.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab2/todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab3/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab3/todo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/opencl/task" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/opencl/task" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/comparator_output_filter.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/comparator_output_filter.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/double_neg_elimination.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/double_neg_elimination.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/double_neg_elimination.m4scp_test.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/double_neg_elimination.m4scp_test.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/double_neg_elimination_else.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/double_neg_elimination_else.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/double_neg_elimination_then.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/double_neg_elimination_then.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/strategy_simple.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/sample/strategy_simple.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/lab5/scp/todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Call Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Call Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Condition Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Condition Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Cycle Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Cycle Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Erase Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Erase Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Gen Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Gen Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/HW Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/HW Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Handling Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Handling Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/PM/pm.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/PM/pm.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Search Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Search Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Select Sample.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/Select Sample.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/active.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/active.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/data.scs" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/data.scs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/opencl/task" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/opencl/task" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/comparator_output_filter.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/comparator_output_filter.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/double_neg_elimination.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/double_neg_elimination.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/double_neg_elimination.m4scp_test.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/double_neg_elimination.m4scp_test.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/double_neg_elimination_else.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/double_neg_elimination_else.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/double_neg_elimination_then.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/double_neg_elimination_then.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/strategy_simple.m4scp" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/sample/strategy_simple.m4scp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp/todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp_keynodes.scsy" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/scp_keynodes.scsy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/М4SCP Examples.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/М4SCP Examples.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/М4SCP Guide.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/М4SCP Guide.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/М4SCP Styling.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/М4SCP Styling.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/М4SCP Syntax.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/special/М4SCP Syntax.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/old/urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/quest/_old/lab1.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/quest/_old/lab1.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/quest/_old/test.201.url" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/quest/_old/test.201.url" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/2 курс/urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/PCA.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/PCA.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lab1.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lab1.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lab2.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lab2.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lab3.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lab3.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/Image2357.gif" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/Image2357.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/Image2363.gif" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/Image2363.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/Image2364.gif" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/Image2364.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/Image2365.gif" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/Image2365.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/chapter10.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/chapter10.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/cog.ltv" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/lit/cgtr/cog.ltv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/quest/urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/quest/urls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/quest/Вопросы 301.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/quest/Вопросы 301.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/samples/lab1.nb" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/samples/lab1.nb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/samples/lab2.nb" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/samples/lab2.nb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/js/gateway.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/js/gateway.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/js/tiny/tiny.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/js/tiny/tiny.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/js/variety.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/js/variety.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/external/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.structure.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.structure.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.structure.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.structure.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jquery-ui/jquery-ui.theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jscolor/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jscolor/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jscolor/jscolor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/jscolor/jscolor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/threejs/three.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/lib/threejs/three.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/run.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/run2.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/run2.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/test.url" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/test/test.url" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../mrzvis/МРЗВИС/3 курс/urls.txt" afterDir="false" />
-    </list>
+    <list default="true" id="927f2fa4-08ed-4904-97dc-d613974a847a" name="Changes" comment="giis: lab3 completely finished" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -210,30 +33,46 @@
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2sqN6FWuuSEcJhWjMLNOzDI9Uep" />
+  <component name="ProjectId" id="2s7rMhEtDTx7uapb1VCZrNoWo4V" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.123.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.graph.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.menu.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "E:/BSUIR/sem6/giis/lab1-old",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="lab1-old" />
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\BSUIR\sem6\giis\lab1" />
+      <recent name="E:\BSUIR\sem6\giis\lab1\final\algorythms" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="123" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="lab1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -246,7 +85,99 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/123.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GIIS-lab1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/GIIS-lab1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/GIIS-lab1/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="lab1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/final" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="lab1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="lab1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,7 +188,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.123" />
+        <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -272,23 +206,110 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2401965a-aa53-466b-a10e-853ff894d0c3" name="Changes" comment="" />
-      <created>1739178970248</created>
+      <changelist id="927f2fa4-08ed-4904-97dc-d613974a847a" name="Changes" comment="" />
+      <created>1737817407398</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1739178970248</updated>
-      <workItem from="1739178971918" duration="1308000" />
-      <workItem from="1739191205796" duration="1189000" />
-      <workItem from="1740343269442" duration="234000" />
-      <workItem from="1740343577377" duration="1463000" />
-      <workItem from="1740407748804" duration="11000" />
+      <updated>1737817407398</updated>
+      <workItem from="1738491694935" duration="3748000" />
+      <workItem from="1738504701298" duration="5783000" />
+      <workItem from="1738523509094" duration="3005000" />
+      <workItem from="1738532349858" duration="156000" />
+      <workItem from="1738532521671" duration="74000" />
+      <workItem from="1738568926410" duration="2482000" />
+      <workItem from="1738572506019" duration="129000" />
+      <workItem from="1738583691586" duration="1618000" />
+      <workItem from="1738593174120" duration="849000" />
+      <workItem from="1739018323015" duration="15744000" />
+      <workItem from="1739094053399" duration="6485000" />
+      <workItem from="1739139039157" duration="1032000" />
+      <workItem from="1739174463010" duration="2801000" />
     </task>
+    <task id="LOCAL-00001" summary="fix: &#10;1. plot deleted&#10;2. grid button deleted&#10;3. new logic for grid drawing&#10;4. new logic for table drawing">
+      <option name="closed" value="true" />
+      <created>1738493975410</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738493975410</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix: all what i want&#10;todo: fill color on the point grid">
+      <option name="closed" value="true" />
+      <created>1738532504580</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738532504580</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: clear button + point filling by color">
+      <option name="closed" value="true" />
+      <created>1738571728883</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738571728883</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: clear button + point filling by color">
+      <option name="closed" value="true" />
+      <created>1738572517455</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738572517455</updated>
+    </task>
+    <task id="LOCAL-00005" summary="giis: basic func of 3rd lw has been added">
+      <option name="closed" value="true" />
+      <created>1739033198659</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033198659</updated>
+    </task>
+    <task id="LOCAL-00006" summary="giis: lab3 completely finished">
+      <option name="closed" value="true" />
+      <created>1739177698781</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739177698781</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: &#10;1. plot deleted&#10;2. grid button deleted&#10;3. new logic for grid drawing&#10;4. new logic for table drawing" />
+    <MESSAGE value="fix: all what i want&#10;todo: fill color on the point grid" />
+    <MESSAGE value="fix: clear button + point filling by color" />
+    <MESSAGE value="giis: basic func of 3rd lw has been added" />
+    <MESSAGE value="giis: lab3 completely finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="giis: lab3 completely finished" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/view/compile_curve_window.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/view/workspace.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="points" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/lab1_old$main.coverage" NAME="main Coverage Results" MODIFIED="1739192154830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/lab1_old$main.coverage" NAME="main Coverage Results" MODIFIED="1739177585083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/lab1_old$test.coverage" NAME="test Coverage Results" MODIFIED="1739026720468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
