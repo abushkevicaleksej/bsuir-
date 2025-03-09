@@ -30,25 +30,40 @@ class Menu(ttk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
+        frame = ttk.Frame(self)
+        frame.pack(padx=10, pady=10, fill=BOTH, expand=True)
 
-        mode_button = ttk.Button(self, text='Выбрать режим', command=self.select_mode)
-        line_button = ttk.Button(self, text='Линии второго порядка', command=self.select_line)
-        curve_button = ttk.Button(self, text='Параметрические кривые', command=self.select_curve)
-        compile_segment_button = ttk.Button(self, text='Построить отрезок', command=self.compile_segment)
-        compile_circle_button = ttk.Button(self, text='Построить линию второго порядка', command=self.compile_line)
-        compile_curve_button = ttk.Button(self, text='Построить параметрическую кривую', command=self.compile_curve)
-        clear_button = ttk.Button(self, text = 'Очистить', command = self.clear_data)
+        # Первый ряд кнопок
+        mode_button = ttk.Button(frame, text='Выбрать режим', command=self.select_mode)
+        line_button = ttk.Button(frame, text='Линии второго порядка', command=self.select_line)
+        curve_button = ttk.Button(frame, text='Параметрические кривые', command=self.select_curve)
+        clear_button = ttk.Button(frame, text='Очистить', command=self.clear_data)
 
-        compile_segment_button.pack(side = LEFT, padx = 10, pady = 20)
-        compile_circle_button.pack(side = LEFT, padx = 10, pady = 20)
-        compile_curve_button.pack(side = LEFT, padx = 10, pady = 20)
-        compile_circle_button.pack(side = LEFT, padx = 10, pady = 20)
-        line_button.pack(side=LEFT, padx=10, pady=20)
-        clear_button.pack(side = LEFT, padx = 10, pady = 20)
-        curve_button.pack(side = LEFT, padx = 10, pady = 20)
-        mode_button.pack(side = LEFT, padx = 10, pady = 20)
-        self.mode_label.pack(side = LEFT, padx = 10, pady = 20)
-        self.line_label.pack(side=LEFT, padx=10, pady=20)
+        mode_button.grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
+        line_button.grid(row=0, column=1, padx=5, pady=5, sticky="nsew")
+        curve_button.grid(row=0, column=2, padx=5, pady=5, sticky="nsew")
+        clear_button.grid(row=0, column=3, padx=5, pady=5, sticky="nsew")
+
+        # Второй ряд кнопок
+        compile_segment_button = ttk.Button(frame, text='Построить отрезок', command=self.compile_segment)
+        compile_circle_button = ttk.Button(frame, text='Построить линию второго порядка', command=self.compile_line)
+        compile_curve_button = ttk.Button(frame, text='Построить параметрическую кривую', command=self.compile_curve)
+
+        compile_segment_button.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
+        compile_circle_button.grid(row=1, column=1, padx=5, pady=5, sticky="nsew")
+        compile_curve_button.grid(row=1, column=2, padx=5, pady=5, sticky="nsew")
+
+        # Метки внизу
+        label_frame = ttk.Frame(self)
+        label_frame.pack(pady=10, fill=X)
+
+        self.mode_label.pack(side=LEFT, padx=10)
+        self.line_label.pack(side=LEFT, padx=10)
+        self.curve_label.pack(side=LEFT, padx=10)
+
+        # Равномерное распределение колонок
+        for i in range(4):
+            frame.columnconfigure(i, weight=1)
 
     def select_mode(self):
         SelectModeWindow(self)
